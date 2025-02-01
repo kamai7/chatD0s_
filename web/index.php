@@ -14,7 +14,9 @@
             <span id="app-name">ChatD0s_</span>
         </div>
         <div>
-            <input type="search" id="main-search-bar"/>
+            <div id="main-search-bar-container">
+                <input type="search" id="main-search-bar" class="search-bar" size="25"  placeholder="le caca est cuit"/>
+            </div>
         </div>
         <div id="header-button">
             <div class="button-icon" id="button-open-terminal">
@@ -32,7 +34,7 @@
 
     </header>
     <main>
-    <?php include 'fragments/nav.html'; ?>
+    <?php include 'fragments/nav.php'; ?>
         <div id="workspace">
         <?php include 'fragments/chat.php'; ?>
         </div>
@@ -41,4 +43,4 @@
 
 </body>
 </html>
-<script language="javascript" src="engine.js"></script>
+<script language="javascript" src="index.js"></script>

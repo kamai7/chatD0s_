@@ -1,28 +1,44 @@
 /*instaces*/
 :root{
     --border-glow : rgb(59, 40, 168);
-    --primary: rgb(51, 51, 51);
+    --border : rgb(82, 65, 175);
+    --primary: rgb(41, 41, 41);
     --secondary: rgb(57, 57, 57);
     --glow: rgba(108, 69, 206, 0.5);
-
     --text-primary: rgb(210, 210, 210);
     --text-secondary: rgb(110, 110, 110);
+    --dark : rgb(8, 8, 8);
+    --hue : 0deg;
 }
 @font-face {
 	font-family: 'main';
 	src: url('fonts/CascadiaCode.ttf') format('truetype');
 }
 
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: var(--glow);
+    border-radius: 10px;
+}
+::-webkit-scrollbar-track {
+    background-color: var(--dark);
+    border-radius: 10px;
+}
+
 body, html{
     margin : 0;
     padding: 0;
     height: 100%;
+    overflow: hidden;
 }
 
 body{
     font-family: 'main', sans-serif;
     display: flex;
     flex-direction: column;
+    color: white;
 }
 
 /*main blocks*/
@@ -52,8 +68,6 @@ nav{
     display: flex;
     flex-direction: column;
     overflow-y: auto;
-    scrollbar-width: thin;
-    scrollbar-color: black rgb(35,35,35);
 }
 #workspace{
     width: 100%;
@@ -84,15 +98,22 @@ nav{
     width: 70%;
     height: fit-content;
     filter: drop-shadow(0 0 15px var(--border-glow));
+    filter: hue-rotate(var(--hue));
 }
 
 .button-bordered{
     border: 3px solid gray;
     border-radius: 10px;
 }
+
+.search-bar{
+    all: unset;
+    background-color: rgb(68, 68, 68);
+    border-radius: 10px;
+    padding: 6px;
+}
 /*id*/
 #app-name{
-    color: white;
     font-size: 3em;
 }
 
@@ -105,4 +126,16 @@ nav{
     width: 20%;
     min-width: 300px;
     max-width: 500px;
+}
+
+#main-search-bar-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 3px;
+    border-radius: 10px;
+    background: rgb(255,0,206);
+    background: linear-gradient(190deg, rgba(255,0,206,1) 0%, rgba(29,0,255,1) 100%);
+    filter: hue-rotate(var(--hue));
 }

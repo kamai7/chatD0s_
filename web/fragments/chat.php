@@ -13,7 +13,6 @@
             <?php include 'message.php'; ?>
             <?php include 'message.php'; ?>
             <?php include 'message.php'; ?>
-            
         </div>
         <div class="chat-footer">
             <input type="text" class="chat-input" placeholder="Ecrivez un message...">
@@ -23,27 +22,15 @@
 </div>
 
 <style>
-::-webkit-scrollbar {
-    width: 10px;
-}
-::-webkit-scrollbar-thumb {
-    background-color: var(--glow);
-    border-radius: 10px;
-}
-::-webkit-scrollbar-track {
-    background-color: var(--dark);
-    border-radius: 10px;
-}
-
 .window {
+
     left: 140px;
     top: 200px;
     position: relative;
-    width: 700px;
-    left: 140px;
-    top: 200px;
-    position: relative;
-    width: 700px;
+    height: 300px;
+    width: 600px;
+    min-width: 400px;
+    min-height: 300px;
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -57,23 +44,32 @@
     padding-top: 2px;
     justify-content: space-between;
     align-items: center;
+    cursor: move;
 }
 .window-title {
     padding: 0 5px;
 }
 .window-buttons {
     display: flex;
+    margin-right: 5px;
 }
 .window-button {
     color: white;
     padding: 0 5px;
     cursor: pointer;
 }
-
-.chat {
+.window-button:hover {
+    transition: 0.2s;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+.window-close:hover{
+    transition: 0.2s;
+    background-color: rgba(255, 0, 0, 0.5);
+}
+.chat{
     display: flex;
     flex-direction: column;
-    height: 200px;
+    height: 100%;
     margin: 5px;
     padding: 10px;
     background-color: var(--primary);
@@ -89,34 +85,11 @@
     flex-direction: column;
     gap: 5px;
 }
-.chat-message {
-    display: flex;
-    margin: 5px 0;
-}
-.chat-message-profile {
-    width: 37px;
-    height: 37px;
-    margin-right: 10px;
-    background-color: var(--secondary);
-    border-radius: 50%;
-}
-.chat-message-username {
-    color: #ff007b;
-    font-weight: 500;
-}
-.chat-message-username::after {
-    content: ' $';
-}
-.chat-message-content {
-    font-weight: 100;
-}
 .chat-footer {
     display: flex;
     padding: 5px;
     background-color: var(--secondary);
-    border: 1px solid;
-    border-color: var(--border-glow);
-    border-color: var(--border-glow);
+    border: 2px solid var(--border);
     filter: drop-shadow(0 0 5px var(--glow));
     border-radius: 12px;
 }

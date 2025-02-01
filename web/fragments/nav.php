@@ -12,13 +12,17 @@
     </div>
 
     <div id="nav-social">
-
+        <?php include 'social_container.php'; ?>
+        <?php include 'social_container.php'; ?>
+        <?php include 'social_container.php'; ?>
+        <?php include 'social_container.php'; ?>
+        <?php include 'social_container.php'; ?>
     </div>
 </nav>
 <style>
 #nav-selection{
     height: 100px;
-    background-color: rgb(8, 8, 8);
+    background-color: var(--dark);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -46,5 +50,12 @@
     color: rgb(77, 196, 41);
     transition: 0.2s;
     transform: scale(1.1);
+}
+#nav-social{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    overflow-y: auto;
+    gap: 10px;
 }
 </style>
