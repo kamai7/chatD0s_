@@ -36,8 +36,12 @@
     <main>
     <?php include 'fragments/nav.php'; ?>
         <div id="workspace">
-        <?php include 'fragments/window.php'; ?>
-        <?php include 'fragments/window.php'; ?>
+            <div id="workspace-content">
+                <?php include 'fragments/window.php'; ?>
+                <?php include 'fragments/window.php'; ?>
+            </div>
+            <div id="workspace-windows">
+            </div>
         </div>
     </main>
 
@@ -45,4 +49,4 @@
 </body>
 </html>
 <script language="javascript" src="js/base_functions.js"></script>
-<script language="javascript" src="js/window_move.js"></script>
+<script language="javascript" src="js/window.js"></script>

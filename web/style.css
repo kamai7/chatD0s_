@@ -142,3 +142,21 @@ nav{
     background: linear-gradient(190deg, rgba(255,0,206,1) 0%, rgba(29,0,255,1) 100%);
     filter: hue-rotate(var(--hue));
 }
+
+#workspace{
+    display: flex;
+    flex-direction: column;
+}
+
+#workspace-content{
+    height: 100%;
+    width: 100%;
+}
+
+#workspace-windows{
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+    width: 100%;
+}
