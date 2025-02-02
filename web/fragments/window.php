@@ -1,4 +1,4 @@
-<div class="window">
+<div class="window wind">
     <div class="window-header">
         <div class="window-title">chat n°0</div>
         <div class="window-buttons">

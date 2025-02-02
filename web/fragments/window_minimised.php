@@ -1,4 +1,4 @@
-<div class="window-minimized">
+<div class="window-minimized wind">
     <div class="window-title"></div>
     <div class="window-buttons">
         <div class="window-button window-maximize">[]</div>

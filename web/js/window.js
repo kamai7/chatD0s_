@@ -42,37 +42,33 @@ function displayBefore(elemToDisplay) {
     var parentElement = elemToDisplay.parentNode;
     parentElement.appendChild(elemToDisplay);
 }
-function close(button) {
-    console.log("Bouton de fermeture cliqué !");
-    let windowElement = button.closest(".window");
-    console.log(windowElement);
-    windowElement.remove();
-}
 
 document.querySelectorAll(".window-close").forEach(windowElement => {
     windowElement.addEventListener("mousedown", function() {
-        if(this.parentNode.parentNode.parentNode.classList.contains("window")){
-            var windowElement = this.closest(".window");
-        }else{
-            var windowElement = this.closest(".window-minimized");
-        }
-        
+        var windowElement = this.closest(".wind");
         windowElement.remove();
     });
 })
 
 document.querySelectorAll(".window-maximize").forEach(windowElement => {
     windowElement.addEventListener("mousedown", function() {
-        let windowElement = this.closest(".window");
+        let windowElement = this.closest(".wind");
         let limitTop = document.getElementById("header")?.offsetHeight || 0;
-        let workspace = document.getElementById("workspace");
+        let workspace = document.getElementById("workspace-content");
         let nav = document.getElementById("nav");
+        if(windowElement.offsetWidth > workspace.offsetWidth -2 && windowElement.offsetHeight > workspace.offsetHeight -2){
+            windowElement.style.top = "300px";
+            windowElement.style.left = "500px";
 
-        windowElement.style.top = limitTop + "px";
-        windowElement.style.left = nav ? nav.offsetWidth + "px" : "0px";
+            windowElement.style.width = "500px";
+            windowElement.style.height = "300px";
+        }else{
+            windowElement.style.top = limitTop + "px";
+            windowElement.style.left = nav ? nav.offsetWidth + "px" : "0px";
 
-        windowElement.style.width = workspace.offsetWidth + "px";
-        windowElement.style.height = workspace.offsetHeight + "px";
+            windowElement.style.width = workspace.offsetWidth + "px";
+            windowElement.style.height = workspace.offsetHeight + "px";
+        }
     });
 })
 
@@ -80,14 +76,12 @@ document.querySelectorAll(".window-minimize").forEach(windowElement => {
     windowElement.addEventListener("mousedown", function() {
         var windowElement = this.closest(".window");
         var chat_name = windowElement.getElementsByClassName("window-title")[0].innerText;
-        console.log(chat_name);
         windowElement.remove();
         fetch('fragments/window_minimised.php')
         .then(response => response.text())
         .then(data => {
             var tempElement = document.createElement('div');
             tempElement.innerHTML = data;
-            console.log(tempElement);
             tempElement.getElementsByClassName('window-title')[0].textContent = chat_name;
             document.getElementById("workspace-windows").insertAdjacentHTML("afterbegin", tempElement.innerHTML);
         })
