@@ -42,8 +42,6 @@ $_SESSION['uses_name'] = 'dev -_-';
     <?php include 'fragments/nav.php'; ?>
         <div id="workspace">
             <div id="workspace-content">
-                <?php include 'fragments/window.php'; ?>
-                <?php include 'fragments/window.php'; ?>
             </div>
             <div id="workspace-windows">
             </div>
@@ -54,4 +52,4 @@ $_SESSION['uses_name'] = 'dev -_-';
 </body>
 </html>
 <script language="javascript" src="js/base_functions.js"></script>
-<script language="javascript" src="js/window_move.js"></script>
+<script language="javascript" src="js/window.js"></script>
