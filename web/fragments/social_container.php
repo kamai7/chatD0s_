@@ -3,7 +3,7 @@
         <img src="img/illustrations/not-log-user.png">
     </div>
     <div class="content-container">
-        <span class="username">User</span>
+        <span class="username"><?php echo $user;?></span>
         <div class="social-status">
             <div class="status-icon"></div>
             <span class="status-text"> bonjour :)</span>

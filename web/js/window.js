@@ -4,7 +4,7 @@
 
 function window_drag(event,elem) {
     var windowElement = elem.parentNode.parentNode;
-    displayBefore(windowElement);
+    display_before(windowElement);
     if (!windowElement) return;
 
     var offsetX = event.clientX - windowElement.offsetLeft;
@@ -36,7 +36,6 @@ function window_drag(event,elem) {
 }
 
 function window_close(elem) {
-    console.log(elem);
     var windowElement = elem.closest(".wind");
     windowElement.remove();
 }

@@ -10,7 +10,7 @@ async function get_page(path) {
     }
 }
 
-function displayBefore(elemToDisplay) {
+function display_before(elemToDisplay) {
     var parentElement = elemToDisplay.parentNode;
     parentElement.appendChild(elemToDisplay);
 }

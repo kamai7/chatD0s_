@@ -12,11 +12,11 @@
     </div>
 
     <div id="nav-social">
-        <?php include 'social_container.php'; ?>
-        <?php include 'social_container.php'; ?>
-        <?php include 'social_container.php'; ?>
-        <?php include 'social_container.php'; ?>
-        <?php include 'social_container.php'; ?>
+        <?php
+        foreach ($_SESSION['users'] as $user) {
+            include 'fragments/social_container.php';
+        }
+        ?>
     </div>
 </nav>
 <style>

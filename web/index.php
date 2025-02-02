@@ -1,3 +1,8 @@
+<?php
+session_start();
+$_SESSION['users'] = array('jean','kyami','jf kamp','mimich','kamaï','rag');
+$_SESSION['uses_name'] = 'dev -_-';
+?>
 <!DOCTYPE html>
 <html>
   <head>
