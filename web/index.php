@@ -44,4 +44,5 @@
 
 </body>
 </html>
-<script language="javascript" src="index.js"></script>
+<script language="javascript" src="js/base_functions.js"></script>
+<script language="javascript" src="js/window_move.js"></script>

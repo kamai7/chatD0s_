@@ -4,7 +4,7 @@
         <div class="window-buttons">
             <div class="window-button window-minimize">_</div>
             <div class="window-button window-maximize">[]</div>
-            <div class="window-button window-close">X</div>
+            <div class="window-button window-close" onclick="close(this)">X</div>
         </div>
     </div>
     <?php include 'terminal.php'; ?>
