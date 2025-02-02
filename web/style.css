@@ -148,6 +148,7 @@ nav{
     flex-direction: column;
 }
 
+<<<<<<< Updated upstream
 #workspace-content{
     height: 100%;
     width: 100%;
@@ -158,5 +159,19 @@ nav{
     display: flex;
     flex-direction: row;
     gap: 4px;
+=======
+#workspace-windows{
+    display: flex;
+    flex-direction: row;
+    height: 30px;
+    width: 100%;
+    gap: 4px;
+}
+
+#workspace-content{
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+>>>>>>> Stashed changes
     width: 100%;
 }

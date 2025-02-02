@@ -19,6 +19,7 @@ function display_before(elemToDisplay) {
 function displayBefore(elemToDisplay) {
     var parentElement = elemToDisplay.parentNode;
     parentElement.appendChild(elemToDisplay);
+<<<<<<< Updated upstream
 }
 
 async function open_chat(elem) {
@@ -29,4 +30,6 @@ async function open_chat(elem) {
     tempElement.innerHTML = data;
     tempElement.getElementsByClassName('window-title')[0].textContent = chat_name;
     document.getElementById("workspace-content").insertAdjacentHTML("afterbegin", tempElement.innerHTML);
+=======
+>>>>>>> Stashed changes
 }
