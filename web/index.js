@@ -18,6 +18,9 @@ document.querySelectorAll(".window-title").forEach(header => {
         function moveAt(e) {
             style = window.getComputedStyle(windowElement)
             limit_top = document.getElementById("header").offsetHeight;
+            workspace_width = document.getElementById("workspace").offsetWidth;
+            workspace_height = document.getElementById("workspace").offsetHeight;
+
             try {
                 limit_left = document.getElementById("nav").offsetWidth;
             } catch(e) {
@@ -28,15 +31,30 @@ document.querySelectorAll(".window-title").forEach(header => {
             
             if (new_left > limit_left) {
                 windowElement.style.left = new_left + "px";
+
+                if ((new_left + windowElement.offsetWidth) < (workspace_width + limit_left)) {
+                    windowElement.style.left = new_left + "px";
+                } else {
+                    windowElement.style.left = (workspace_width + limit_left) - windowElement.offsetWidth + "px";
+                }
+
             } else {
                 windowElement.style.left = limit_left + "px";
             }
 
             if (new_top > limit_top) {
                 windowElement.style.top = new_top + "px";
+
+                if ((new_top + windowElement.offsetHeight) < (workspace_height + limit_top)) {
+                    windowElement.style.top = new_top + "px";
+                } else {
+                    windowElement.style.top = (workspace_height + limit_top) - windowElement.offsetHeight + "px";
+                }
+
             } else {
                 windowElement.style.top = limit_top + "px";
             }
+
         }
 
         function stopMove() {
