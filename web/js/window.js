@@ -78,14 +78,16 @@ document.querySelectorAll(".window-maximize").forEach(windowElement => {
 
 document.querySelectorAll(".window-minimize").forEach(windowElement => {
     windowElement.addEventListener("mousedown", function() {
-        let windowElement = this.closest(".window");
+        var windowElement = this.closest(".window");
         var chat_name = windowElement.getElementsByClassName("window-title")[0].innerText;
+        console.log(chat_name);
         windowElement.remove();
-        fetch('fragments/window_minimize.php')
+        fetch('fragments/window_minimised.php')
         .then(response => response.text())
         .then(data => {
             var tempElement = document.createElement('div');
             tempElement.innerHTML = data;
+            console.log(tempElement);
             tempElement.getElementsByClassName('window-title')[0].textContent = chat_name;
             document.getElementById("workspace-windows").insertAdjacentHTML("afterbegin", tempElement.innerHTML);
         })
