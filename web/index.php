@@ -43,6 +43,11 @@ $_SESSION['uses_name'] = 'dev -_-';
         <div id="workspace">
             <div id="workspace-content">
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+                <?php include 'fragments/window.php'; ?>
+                <?php include 'fragments/window.php'; ?>
+>>>>>>> Stashed changes
 =======
                 <?php include 'fragments/window.php'; ?>
                 <?php include 'fragments/window.php'; ?>
@@ -58,7 +63,11 @@ $_SESSION['uses_name'] = 'dev -_-';
 </html>
 <script language="javascript" src="js/base_functions.js"></script>
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <script language="javascript" src="js/window.js"></script>
+=======
+<script language="javascript" src="js/windows.js"></script>
+>>>>>>> Stashed changes
 =======
 <script language="javascript" src="js/windows.js"></script>
 >>>>>>> Stashed changes

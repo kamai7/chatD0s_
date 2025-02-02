@@ -10,6 +10,9 @@
             <div class="window-button window-minimize">_</div>
             <div class="window-button window-maximize">[]</div>
             <div class="window-button window-close">X</div>
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
         </div>
     </div>
