@@ -37,8 +37,6 @@
     <?php include 'fragments/nav.php'; ?>
         <div id="workspace">
             <div id="workspace-content">
-                <?php include 'fragments/window.php'; ?>
-                <?php include 'fragments/window.php'; ?>
             </div>
             <div id="workspace-windows">
             </div>

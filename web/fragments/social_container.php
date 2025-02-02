@@ -1,4 +1,4 @@
-<div class="social-container">
+<div class="social-container" onclick="open_chat(this)">
     <div class="pp-container">
         <img src="img/illustrations/not-log-user.png">
     </div>
@@ -17,6 +17,7 @@
         display: flex;
         flex-direction: row;
         border-radius: 10px;
+        cursor: pointer;
     }
     .pp-container{
         width: 28%;

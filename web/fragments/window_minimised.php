@@ -1,7 +1,7 @@
 <div class="window-minimized wind">
     <div class="window-title"></div>
     <div class="window-buttons">
-        <div class="window-button window-maximize">[]</div>
+        <div class="window-button window-maximize" onclick="window_maximize(this)">[]</div>
         <div class="window-button window-close">X</div>
     </div>
 </div>
