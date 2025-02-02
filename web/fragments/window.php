@@ -2,18 +2,12 @@
     <div class="window-header">
         <div class="window-title" onmousedown="window_drag(event,this)">z</div>
         <div class="window-buttons">
-<<<<<<< Updated upstream
             <div class="window-button window-minimize" onclick="window_minimize(this)">_</div>
             <div class="window-button window-maximize" onclick="window_maximize(this)">[]</div>
             <div class="window-button window-close" onclick="window_close(this)">X</div>
-=======
             <div class="window-button window-minimize">_</div>
             <div class="window-button window-maximize">[]</div>
             <div class="window-button window-close">X</div>
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
         </div>
     </div>
     <?php include 'terminal.php'; ?>
