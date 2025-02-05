@@ -1,38 +1,51 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <link rel=stylesheet type="text/css" href="style.css">
-    <link rel="shortcut icon" href="img/ui/logo_main.ico" type="image/x-icon">
-    <title>chatD0s_</title>
-</head>
-<body>
-    <div class="window">
-        <div class="window-header">
-            <div class="window-title">chat n°0</div>
-            <div class="window-buttons">
-                <div class="window-button window-minimize">_</div>
-                <div class="window-button window-maximize">[]</div>
-                <div class="window-button window-close">X</div>
-            </div>
-        </div>
-
-        <div class="chat">
-            <div class="chat-body">
-                <div class="chat-message">
-                    <div class="chat-message-content">
-                        helow wold! >w<
-                    </div>
-                </div>
-            </div>
-            <div class="chat-footer">
-                <input type="text" class="chat-input" placeholder="Ecrivez un message...">
-                <div class="chat-send">Envoyer</div>
-            </div>
+<div class="window">
+    <div class="window-header">
+        <div class="window-title">chat n°0</div>
+        <div class="window-buttons">
+            <div class="window-button window-minimize">_</div>
+            <div class="window-button window-maximize">[]</div>
+            <div class="window-button window-close">X</div>
         </div>
     </div>
-</body>
-</html>
+
+    <div class="chat">
+        <div class="chat-body">
+            <div class="chat-message">
+                <div class="chat-message-profile"><!--img--></div>
+                <div class="chat-message-body">
+                    <div class="chat-message-username">User</div>
+                    <div class="chat-message-content">helow wold! >w<</div>
+                </div>
+            </div>
+            <div class="chat-message">
+                <div class="chat-message-profile"><!--img--></div>
+                <div class="chat-message-body">
+                    <div class="chat-message-username">User</div>
+                    <div class="chat-message-content">helow wold! >w<</div>
+                </div>
+            </div>
+            <div class="chat-message">
+                <div class="chat-message-profile"><!--img--></div>
+                <div class="chat-message-body">
+                    <div class="chat-message-username">User</div>
+                    <div class="chat-message-content">helow wold! >w<</div>
+                </div>
+            </div>
+            <div class="chat-message">
+                <div class="chat-message-profile"><!--img--></div>
+                <div class="chat-message-body">
+                    <div class="chat-message-username">User</div>
+                    <div class="chat-message-content">helow wold! >w<</div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="chat-footer">
+            <input type="text" class="chat-input" placeholder="Ecrivez un message...">
+            <div class="chat-send">Envoyer</div>
+        </div>
+    </div>
+</div>
 
 <style>
 :root {
@@ -41,7 +54,7 @@
     --accent: rgb(108, 69, 206);
     --glow: rgba(108, 69, 206, 0.5);
 
-    --text-primary: rgb(220, 220, 220);
+    --text-primary: rgb(210, 210, 210);
     --text-secondary: rgb(110, 110, 110);
 }
 
@@ -55,6 +68,7 @@ body {
     padding: 10px;
     background-color: #111;
     font-family: 'main', sans-serif;
+    font-weight: 200;
 }
 
 .window {
@@ -71,9 +85,6 @@ body {
     padding-top: 2px;
     justify-content: space-between;
     align-items: center;
-}
-.window-header > * {
-    cursor: default;
 }
 .window-title {
     padding: 0 5px;
@@ -100,6 +111,28 @@ body {
     flex: 1;
     padding: 5px;
     color: var(--text-primary);
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.chat-message {
+    display: flex;
+    margin: 5px 0;
+}
+.chat-message-profile {
+    width: 37px;
+    height: 37px;
+    margin-right: 10px;
+    background-color: var(--secondary);
+    border-radius: 50%;
+}
+.chat-message-username {
+    color: #ff007b;
+    font-weight: 500;
+}
+.chat-message-username::after {
+    content: ' $';
 }
 .chat-message-content {
     font-weight: 100;
@@ -117,7 +150,7 @@ body {
     all: unset;
     flex: 1;
     margin: 0 5px;
-    appearance: none;
+    color: var(--text-primary)
 }
 .chat-send {
     margin: 0 5px;
