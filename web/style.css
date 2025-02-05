@@ -36,14 +36,28 @@ header{
 main{
     background-color: rgb(26, 26, 26);
     height: 100%;
+    display: flex;
+    flex-direction: row;
 }
-
+nav{
+    width: 20%;
+    height: 100%;
+    background-color: rgb(15, 15, 15);
+}
+#workspace{
+    width: 100%;
+}
 /*classes*/
 .button-icon{
+    cursor: pointer;
     display: flex;
     aspect-ratio: 1/1;
     height: 70%;
     align-items: center;
+}
+.button-icon:hover{
+    height: 74%;
+    transition: 0.2s;
 }
 
 .header-user-icon{
@@ -58,7 +72,7 @@ main{
 .small-button{
     width: 70%;
     height: fit-content;
-    filter: drop-shadow(0 0 20px var(--border-glow));
+    filter: drop-shadow(0 0 15px var(--border-glow));
 }
 /*id*/
 #app-name{
