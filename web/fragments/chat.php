@@ -10,34 +10,9 @@
 
     <div class="chat">
         <div class="chat-body">
-            <div class="chat-message">
-                <div class="chat-message-profile"><!--img--></div>
-                <div class="chat-message-body">
-                    <div class="chat-message-username">User</div>
-                    <div class="chat-message-content">helow wold! >w<</div>
-                </div>
-            </div>
-            <div class="chat-message">
-                <div class="chat-message-profile"><!--img--></div>
-                <div class="chat-message-body">
-                    <div class="chat-message-username">User</div>
-                    <div class="chat-message-content">helow wold! >w<</div>
-                </div>
-            </div>
-            <div class="chat-message">
-                <div class="chat-message-profile"><!--img--></div>
-                <div class="chat-message-body">
-                    <div class="chat-message-username">User</div>
-                    <div class="chat-message-content">helow wold! >w<</div>
-                </div>
-            </div>
-            <div class="chat-message">
-                <div class="chat-message-profile"><!--img--></div>
-                <div class="chat-message-body">
-                    <div class="chat-message-username">User</div>
-                    <div class="chat-message-content">helow wold! >w<</div>
-                </div>
-            </div>
+            <?php include 'message.php'; ?>
+            <?php include 'message.php'; ?>
+            <?php include 'message.php'; ?>
             
         </div>
         <div class="chat-footer">
@@ -48,30 +23,12 @@
 </div>
 
 <style>
-:root {
-    --primary: rgb(51, 51, 51);
-    --secondary: rgb(57, 57, 57);
-    --accent: rgb(108, 69, 206);
-    --glow: rgba(108, 69, 206, 0.5);
-
-    --text-primary: rgb(210, 210, 210);
-    --text-secondary: rgb(110, 110, 110);
-}
-
-@font-face {
-    font-family: 'main';
-    src: url('fonts/CascadiaCode.ttf') format('truetype');
-}
-
-body {
-    margin: 0;
-    padding: 10px;
-    background-color: #111;
-    font-family: 'main', sans-serif;
-    font-weight: 200;
-}
 
 .window {
+    left: 140px;
+    top: 200px;
+    position: relative;
+    width: 700px;
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -142,7 +99,7 @@ body {
     padding: 5px;
     background-color: var(--secondary);
     border: 1px solid;
-    border-color: var(--accent);
+    border-color: var(--border-glow);
     filter: drop-shadow(0 0 5px var(--glow));
     border-radius: 12px;
 }
@@ -154,9 +111,10 @@ body {
 }
 .chat-send {
     margin: 0 5px;
-    background-color: var(--accent);
+    background-color: var(--border-glow);
     border-radius: 12px;
     padding: 3px 7px;
+    cursor: pointer;
 }
 </style>
 

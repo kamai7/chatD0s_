@@ -33,7 +33,9 @@
     </header>
     <main>
     <?php include 'fragments/nav.html'; ?>
-        <div id="workspace"></div>
+        <div id="workspace">
+        <?php include 'fragments/chat.php'; ?>
+        </div>
     </main>
 
 
