@@ -32,11 +32,7 @@
 
     </header>
     <main>
-        <nav>
-            <div>
-                
-            </div>
-        </nav>
+    <?php include 'fragments/nav.html'; ?>
         <div id="workspace"></div>
     </main>
 

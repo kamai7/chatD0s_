@@ -4,7 +4,7 @@
 }
 @font-face {
 	font-family: 'main';
-	src: url('fonts/Cascadia.ttf') format('truetype');
+	src: url('fonts/CascadiaCode.ttf') format('truetype');
 }
 
 body, html{
@@ -43,6 +43,11 @@ nav{
     width: 20%;
     height: 100%;
     background-color: rgb(15, 15, 15);
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: black rgb(35,35,35);
 }
 #workspace{
     width: 100%;
@@ -56,7 +61,7 @@ nav{
     align-items: center;
 }
 .button-icon:hover{
-    height: 74%;
+    transform: scale(1.06);
     transition: 0.2s;
 }
 
@@ -73,6 +78,11 @@ nav{
     width: 70%;
     height: fit-content;
     filter: drop-shadow(0 0 15px var(--border-glow));
+}
+
+.button-bordered{
+    border: 3px solid gray;
+    border-radius: 10px;
 }
 /*id*/
 #app-name{
