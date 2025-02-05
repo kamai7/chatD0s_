@@ -23,6 +23,17 @@
 </div>
 
 <style>
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: var(--glow);
+    border-radius: 10px;
+}
+::-webkit-scrollbar-track {
+    background-color: var(--dark);
+    border-radius: 10px;
+}
 
 .window {
     left: 140px;
