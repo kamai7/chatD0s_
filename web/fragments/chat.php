@@ -29,10 +29,14 @@
     top: 200px;
     position: relative;
     width: 700px;
+    left: 140px;
+    top: 200px;
+    position: relative;
+    width: 700px;
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    background-color: #222;
+    background-color: var(--dark);
     border-radius: 6px;
 }
 
@@ -66,6 +70,7 @@
 }
 .chat-body {
     flex: 1;
+    margin-bottom: 10px;
     padding: 5px;
     color: var(--text-primary);
     overflow-y: auto;
@@ -100,6 +105,7 @@
     background-color: var(--secondary);
     border: 1px solid;
     border-color: var(--border-glow);
+    border-color: var(--border-glow);
     filter: drop-shadow(0 0 5px var(--glow));
     border-radius: 12px;
 }
@@ -111,6 +117,7 @@
 }
 .chat-send {
     margin: 0 5px;
+    background-color: var(--border-glow);
     background-color: var(--border-glow);
     border-radius: 12px;
     padding: 3px 7px;
