@@ -1,0 +1,78 @@
+/*instaces*/
+:root{
+    --border-glow : rgb(59, 40, 168);
+}
+@font-face {
+	font-family: 'main';
+	src: url('fonts/Cascadia.ttf') format('truetype');
+}
+
+body, html{
+    margin : 0;
+    padding: 0;
+    height: 100%;
+}
+
+body{
+    font-family: 'main', sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+/*main blocks*/
+header{
+    height: 14%;
+    max-height: 160px;
+    min-height: 100px;
+    background-color: black;
+    border-bottom: var(--border-glow) solid 4px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 4%;
+    padding-right: 4%;
+}
+main{
+    background-color: rgb(26, 26, 26);
+    height: 100%;
+}
+
+/*classes*/
+.button-icon{
+    display: flex;
+    aspect-ratio: 1/1;
+    height: 70%;
+    align-items: center;
+}
+
+.header-user-icon{
+    border: rgb(77, 77, 77) 4px solid;
+    border-radius: 50%;
+}
+
+.button-icon-img{
+    height: 100%;
+}
+
+.small-button{
+    width: 70%;
+    height: fit-content;
+    filter: drop-shadow(0 0 20px var(--border-glow));
+}
+/*id*/
+#app-name{
+    color: white;
+    font-size: 3em;
+}
+
+#header-button{
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+    width: 20%;
+    min-width: 300px;
+    max-width: 500px;
+}
