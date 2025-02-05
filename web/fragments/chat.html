@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel=stylesheet type="text/css" href="style.css">
+    <link rel="shortcut icon" href="img/ui/logo_main.ico" type="image/x-icon">
+    <title>chatD0s_</title>
+</head>
+<body>
+    <div class="window">
+        <div class="window-header">
+            <div class="window-title">chat n°0</div>
+            <div class="window-buttons">
+                <div class="window-button window-minimize">_</div>
+                <div class="window-button window-maximize">[]</div>
+                <div class="window-button window-close">X</div>
+            </div>
+        </div>
+
+        <div class="chat">
+            <div class="chat-body">
+                <div class="chat-message">
+                    <div class="chat-message-content">
+                        helow wold! >w<
+                    </div>
+                </div>
+            </div>
+            <div class="chat-footer">
+                <input type="text" class="chat-input" placeholder="Ecrivez un message...">
+                <div class="chat-send">Envoyer</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<style>
+:root {
+    --primary: rgb(51, 51, 51);
+    --secondary: rgb(57, 57, 57);
+    --accent: rgb(108, 69, 206);
+    --glow: rgba(108, 69, 206, 0.5);
+
+    --text-primary: rgb(220, 220, 220);
+    --text-secondary: rgb(110, 110, 110);
+}
+
+@font-face {
+    font-family: 'main';
+    src: url('fonts/CascadiaCode.ttf') format('truetype');
+}
+
+body {
+    margin: 0;
+    padding: 10px;
+    background-color: #111;
+    font-family: 'main', sans-serif;
+}
+
+.window {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background-color: #222;
+    border-radius: 6px;
+}
+
+.window-header {
+    color: var(--text-secondary);
+    display: flex;
+    padding-top: 2px;
+    justify-content: space-between;
+    align-items: center;
+}
+.window-header > * {
+    cursor: default;
+}
+.window-title {
+    padding: 0 5px;
+}
+.window-buttons {
+    display: flex;
+}
+.window-button {
+    color: white;
+    padding: 0 5px;
+    cursor: pointer;
+}
+
+.chat {
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    margin: 5px;
+    padding: 10px;
+    background-color: var(--primary);
+    border-radius: 6px;
+}
+.chat-body {
+    flex: 1;
+    padding: 5px;
+    color: var(--text-primary);
+}
+.chat-message-content {
+    font-weight: 100;
+}
+.chat-footer {
+    display: flex;
+    padding: 5px;
+    background-color: var(--secondary);
+    border: 1px solid;
+    border-color: var(--accent);
+    filter: drop-shadow(0 0 5px var(--glow));
+    border-radius: 12px;
+}
+.chat-input {
+    all: unset;
+    flex: 1;
+    margin: 0 5px;
+    appearance: none;
+}
+.chat-send {
+    margin: 0 5px;
+    background-color: var(--accent);
+    border-radius: 12px;
+    padding: 3px 7px;
+}
+</style>
+
+<script language="javascript" src="engine.js"></script>
