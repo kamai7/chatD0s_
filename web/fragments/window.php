@@ -35,13 +35,16 @@
     align-items: center;
     cursor: move;
 }
+
 .window-title {
     padding: 0 5px;
 }
+
 .window-buttons {
     display: flex;
     margin-right: 5px;
 }
+
 .window-button {
     color: white;
     padding: 0 5px;
