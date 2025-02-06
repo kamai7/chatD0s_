@@ -12,7 +12,7 @@
 
 <style>
 .window {
-    left: 200px;
+    left: 500px;
     top: 200px;
     position: absolute;
     width: 400px;

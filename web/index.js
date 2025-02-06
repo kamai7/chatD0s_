@@ -5,7 +5,7 @@ function displayBefore(elemToDisplay) {
 
 document.querySelectorAll(".window-header").forEach(header => {
     header.addEventListener("mousedown", function (event) {
-        let windowElement = this.closest(".window"); // Récupère la fenêtre parente
+        let windowElement = this.parentNode; // Récupère la fenêtre parente
         displayBefore(windowElement);
         let offsetX = event.clientX - windowElement.offsetLeft;
         let offsetY = event.clientY - windowElement.offsetTop;
@@ -14,19 +14,23 @@ document.querySelectorAll(".window-header").forEach(header => {
             style = window.getComputedStyle(windowElement)
             limit_top = document.getElementById("header").offsetHeight;
             try {
-                limit_left = document.getElementById("nav").offsetHeight;
-            }catch(e) {
+                limit_left = document.getElementById("nav").offsetWidth;
+            } catch(e) {
                 limit_left = 0;
             }
             new_left = e.clientX - offsetX;
             new_top = e.clientY - offsetY;
-            if(style.getPropertyValue('top') > limit_top + 'px' && style.getPropertyValue('left') > limit_left + 'px'){
-                windowElement.style.left = e.clientX - offsetX + "px";
-                windowElement.style.top = e.clientY - offsetY + "px";
-            }else if(new_top > offsetX){
-                windowElement.style.top = e.clientY - 101 + "px";
-            }else{
-                windowElement.style.left = e.clientX - 101 + "px";
+            
+            if (new_left > limit_left) {
+                windowElement.style.left = new_left + "px";
+            } else {
+                windowElement.style.left = limit_left + "px";
+            }
+
+            if (new_top > limit_top) {
+                windowElement.style.top = new_top + "px";
+            } else {
+                windowElement.style.top = limit_top + "px";
             }
         }
 
