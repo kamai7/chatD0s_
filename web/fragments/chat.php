@@ -13,6 +13,8 @@
             <?php include 'message.php'; ?>
             <?php include 'message.php'; ?>
             <?php include 'message.php'; ?>
+            <?php include 'message.php'; ?>
+            <?php include 'message.php'; ?>
         </div>
         <div class="chat-footer">
             <input type="text" class="chat-input" placeholder="Ecrivez un message...">
@@ -27,10 +29,11 @@
     left: 140px;
     top: 200px;
     position: relative;
-    height: 300px;
+    height: 400px;
     width: 600px;
     min-width: 400px;
     min-height: 300px;
+    
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -67,16 +70,14 @@
     background-color: rgba(255, 0, 0, 0.5);
 }
 .chat{
-    display: flex;
-    flex-direction: column;
-    height: 100%;
     margin: 5px;
     padding: 10px;
     background-color: var(--primary);
     border-radius: 6px;
+    height: calc(100% - 51px);
 }
 .chat-body {
-    flex: 1;
+    height: calc(100% - 59px);
     margin-bottom: 10px;
     padding: 5px;
     color: var(--text-primary);
