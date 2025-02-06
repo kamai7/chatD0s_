@@ -36,7 +36,7 @@
     <main>
     <?php include 'fragments/nav.php'; ?>
         <div id="workspace">
-        <?php include 'fragments/chat.php'; ?>
+        <?php include 'fragments/window.php'; ?>
         </div>
     </main>
 
