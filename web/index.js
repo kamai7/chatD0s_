@@ -3,10 +3,15 @@ function displayBefore(elemToDisplay) {
     parentElement.appendChild(elemToDisplay);
 }
 
-document.querySelectorAll(".window-header").forEach(header => {
+document.querySelectorAll(".window").forEach(windowElement => {
+    windowElement.addEventListener("click", function() {
+        displayBefore(this);
+    });
+});
+
+document.querySelectorAll(".window-title").forEach(header => {
     header.addEventListener("mousedown", function (event) {
-        let windowElement = this.parentNode; // Récupère la fenêtre parente
-        displayBefore(windowElement);
+        let windowElement = this.parentNode.parentNode; // Récupère la fenêtre parente
         let offsetX = event.clientX - windowElement.offsetLeft;
         let offsetY = event.clientY - windowElement.offsetTop;
 

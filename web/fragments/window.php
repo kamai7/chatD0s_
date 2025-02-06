@@ -1,5 +1,5 @@
 <div class="window">
-    <div class="window-header" mousedown="move_window(event, this)">
+    <div class="window-header">
         <div class="window-title">chat n°0</div>
         <div class="window-buttons">
             <div class="window-button window-minimize">_</div>
@@ -33,11 +33,13 @@
     padding-top: 2px;
     justify-content: space-between;
     align-items: center;
-    cursor: move;
+    user-select: none;
 }
 
 .window-title {
+    width: 100%;
     padding: 0 5px;
+    cursor: move;
 }
 
 .window-buttons {

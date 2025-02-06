@@ -13,7 +13,7 @@
         </div>
     </div>
     <div class="terminal-footer">
-        <input type="text" class="terminal-input" placeholder="Ecrivez une commande...">
+        <input type="text" class="terminal-input" placeholder="Ecrivez une commande..." autocomplete="off">
         <div class="terminal-send">Envoyer</div>
     </div>
 </div>

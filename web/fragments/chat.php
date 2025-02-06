@@ -10,7 +10,7 @@
         </div>
     </div>
     <div class="chat-footer">
-        <input type="text" class="chat-input" placeholder="Ecrivez un message...">
+        <input type="text" class="chat-input" placeholder="Ecrivez un message..." autocomplete="off">
         <div class="chat-send">Envoyer</div>
     </div>
 </div>
