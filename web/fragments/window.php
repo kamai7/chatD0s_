@@ -7,7 +7,7 @@
             <div class="window-button window-close">X</div>
         </div>
     </div>
-    <?php include 'chat.php'; ?>
+    <?php include 'terminal.php'; ?>
 </div>
 
 <style>

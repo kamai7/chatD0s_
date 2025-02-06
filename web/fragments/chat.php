@@ -53,9 +53,9 @@
 
 .chat-input {
     all: unset;
-    flex: 1;
+    flex-grow: 1;
     margin: 0 5px;
-    color: var(--text-primary)
+    color: var(--text-primary);
 }
 
 .chat-send {
