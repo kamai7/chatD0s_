@@ -4,12 +4,14 @@
     --border : rgb(82, 65, 175);
     --primary: rgb(41, 41, 41);
     --secondary: rgb(57, 57, 57);
-    --glow: rgba(108, 69, 206, 0.5);
     --text-primary: rgb(210, 210, 210);
     --text-secondary: rgb(110, 110, 110);
     --dark : rgb(8, 8, 8);
     --dark-secondary: rgb(18, 18, 18);
     --hue : 0deg;
+    
+    --border-light: rgb(108, 69, 206);
+    --glow: rgba(108, 69, 206, 0.5);
 }
 @font-face {
 	font-family: 'main';
