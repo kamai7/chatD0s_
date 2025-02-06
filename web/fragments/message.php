@@ -1,8 +1,8 @@
 <div class="chat-message">
     <div class="chat-message-profile"><img src="img/illustrations/not-log-user.png"></div>
     <div class="chat-message-body">
-        <div class="chat-message-username">User</div>
-        <div class="chat-message-content">helow wold! >w<</div>
+        <div class="chat-message-username"><?php echo $message_username; ?></div>
+        <div class="chat-message-content"><?php echo $message_content; ?></div>
     </div>
 </div>
 <style>

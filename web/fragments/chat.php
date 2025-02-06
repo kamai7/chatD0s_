@@ -2,11 +2,11 @@
     <div class="chat-body">
         <!-- Besoin du container sinon ça fait bugger la taille du chat -->
         <div class="chat-body-container">
-            <?php include 'message.php'; ?>
-            <?php include 'message.php'; ?>
-            <?php include 'message.php'; ?>
-            <?php include 'message.php'; ?>
-            <?php include 'message.php'; ?>
+            <?php
+            $message_username='User';
+            $message_content='kakou';
+            require 'message.php';
+            ?>
         </div>
     </div>
     <div class="chat-footer">
