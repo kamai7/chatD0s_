@@ -1,5 +1,5 @@
 <div class="window">
-    <div class="window-header">
+    <div class="window-header" mousedown="move_window(event, this)">
         <div class="window-title">chat n°0</div>
         <div class="window-buttons">
             <div class="window-button window-minimize">_</div>
@@ -12,9 +12,9 @@
 
 <style>
 .window {
-    left: 0;
-    top: 0;
-    position: relative;
+    left: 200px;
+    top: 200px;
+    position: absolute;
     width: 400px;
     height: 300px;
     min-width: 400px;

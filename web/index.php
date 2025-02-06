@@ -8,7 +8,7 @@
 </head>
 <body>
 
-    <header>
+    <header id="header">
 
         <div>
             <span id="app-name">ChatD0s_</span>
@@ -36,6 +36,7 @@
     <main>
     <?php include 'fragments/nav.php'; ?>
         <div id="workspace">
+        <?php include 'fragments/window.php'; ?>
         <?php include 'fragments/window.php'; ?>
         </div>
     </main>

@@ -1,4 +1,4 @@
-<nav>
+<nav id="nav">
     <div id="nav-selection">
         <div id="nav-selection-cross">
             <div class="button-icon button-bordered">
