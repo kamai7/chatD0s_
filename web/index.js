@@ -4,7 +4,7 @@ function displayBefore(elemToDisplay) {
 }
 
 document.querySelectorAll(".window").forEach(windowElement => {
-    windowElement.addEventListener("click", function() {
+    windowElement.addEventListener("mousedown", function() {
         displayBefore(this);
     });
 });
