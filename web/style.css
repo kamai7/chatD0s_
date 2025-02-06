@@ -8,6 +8,7 @@
     --text-primary: rgb(210, 210, 210);
     --text-secondary: rgb(110, 110, 110);
     --dark : rgb(8, 8, 8);
+    --dark-secondary: rgb(18, 18, 18);
     --hue : 0deg;
 }
 @font-face {
@@ -64,7 +65,7 @@ main{
 nav{
     width: 20%;
     height: 100%;
-    background-color: rgb(15, 15, 15);
+    background-color: var(--dark-secondary);
     display: flex;
     flex-direction: column;
     overflow-y: auto;
@@ -133,8 +134,8 @@ nav{
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    padding: 3px;
-    border-radius: 10px;
+    padding: 2px;
+    border-radius: 12px;
     background: rgb(255,0,206);
     background: linear-gradient(190deg, rgba(255,0,206,1) 0%, rgba(29,0,255,1) 100%);
     filter: hue-rotate(var(--hue));
