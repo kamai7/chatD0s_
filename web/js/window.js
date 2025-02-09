@@ -35,23 +35,18 @@ function window_drag(event,elem) {
     document.addEventListener("mouseup", stopMove);
 }
 
-function window_close(elem) {
-    var windowElement = elem.closest(".wind");
-    windowElement.remove();
-}
-
 function window_maximize(e) {
-    var elem = e.closest(".wind");
+    var elem = e.closest(".window");
     let limitTop = document.getElementById("header")?.offsetHeight || 0;
     let workspace = document.getElementById("workspace-content");
     let nav = document.getElementById("nav");
-    if(elem.offsetWidth > workspace.offsetWidth -2 && elem.offsetHeight > workspace.offsetHeight -2){
+    if (elem.offsetWidth > workspace.offsetWidth-2 && elem.offsetHeight > workspace.offsetHeight-2) {
         elem.style.top = "300px";
         elem.style.left = "500px";
 
         elem.style.width = "500px";
         elem.style.height = "300px";
-    }else{
+    } else {
         elem.style.top = limitTop + "px";
         elem.style.left = nav ? nav.offsetWidth + "px" : "0px";
 
@@ -61,14 +56,29 @@ function window_maximize(e) {
 
 }
 
+function window_close(elem) {
+    var windowElement = elem.closest(".window");
+    windowElement.remove();
+}
+
 async function window_minimize(elem) {
-    var windowElement = elem.closest(".wind");
+    var windowElement = elem.closest(".window");
     var chat_name = windowElement.getElementsByClassName("window-title")[0].innerText;
     windowElement.remove();
 
-    var data = await get_page("fragments/window_minimised.php");
     var tempElement = document.createElement('div');
-    tempElement.innerHTML = data;
+    tempElement.innerHTML = await get_page("fragments/window_minimised.php");
     tempElement.getElementsByClassName('window-title')[0].textContent = chat_name;
     document.getElementById("workspace-windows").insertAdjacentHTML("afterbegin", tempElement.innerHTML);
+}
+
+async function window_retrieve(elem) {
+    var windowElement = elem.closest(".window");
+    var chat_name = windowElement.getElementsByClassName("window-title")[0].innerText;
+    windowElement.remove();
+
+    var tempElement = document.createElement('div');
+    tempElement.innerHTML = await get_page("fragments/window.php");
+    tempElement.getElementsByClassName('window-title')[0].textContent = chat_name;
+    document.getElementById("workspace-content").insertAdjacentHTML("afterbegin", tempElement.innerHTML);
 }
