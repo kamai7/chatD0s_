@@ -1,5 +1,8 @@
 //instaces
 
+var SERVERS = [];
+var USERS = [];
+
 async function get_page(path) {
     try {
         var response = await fetch(path);
