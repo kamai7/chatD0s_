@@ -18,6 +18,10 @@
     cursor: move;
 }
 
+.window-minimized .window-title {
+    cursor: pointer;
+}
+
 .window-button {
     color: white;
     padding: 0 5px;
