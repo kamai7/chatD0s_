@@ -1,6 +1,6 @@
 //fonctions
 
-
+var max = false;
 
 function window_drag(event,elem) {
     var windowElement = elem.parentNode.parentNode;
@@ -19,11 +19,21 @@ function window_drag(event,elem) {
     var workspaceHeight = workspace ? workspace.offsetHeight : window.innerHeight;
 
     function moveAt(e) {
-        var newLeft = Math.max(limitLeft, Math.min(e.clientX - offsetX, limitLeft + workspaceWidth - windowElement.offsetWidth));
+        var newLeft = Math.max(limitLeft, Math.min(e.clientX - offsetX, (limitLeft + workspaceWidth - windowElement.offsetWidth)));
         var newTop = Math.max(limitTop, Math.min(e.clientY - offsetY, (limitTop + workspaceHeight - windowElement.offsetHeight)));
-
-        windowElement.style.left = `${newLeft}px`;
-        windowElement.style.top = `${newTop}px`;
+        if (e.clientY <= limitTop + 1){
+            if (!max) {
+                window_maximize(elem);
+                max = true;
+            }
+        }else{
+            if (max) {
+                window_maximize(elem);
+            }
+            max = false;
+            windowElement.style.left = `${newLeft}px`;
+            windowElement.style.top = `${newTop}px`;
+        }
     }
 
     function stopMove() {
@@ -46,12 +56,14 @@ function window_maximize(e) {
 
         elem.style.width = "500px";
         elem.style.height = "300px";
+        return false;
     } else {
         elem.style.top = limitTop + "px";
         elem.style.left = nav ? nav.offsetWidth + "px" : "0px";
 
         elem.style.width = workspace.offsetWidth + "px";
         elem.style.height = workspace.offsetHeight + "px";
+        return true;
     }
 
 }

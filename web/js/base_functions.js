@@ -27,7 +27,6 @@ async function open_chat(elem) {
     var data = await get_page("fragments/window.php");
     var tempElement = document.createElement('div');
     tempElement.innerHTML = data;
-    console.log(tempElement);
     tempElement.getElementsByClassName('window-title')[0].textContent = chat_name;
     document.getElementById("workspace-content").insertAdjacentHTML("beforeend", tempElement.innerHTML);
 }
