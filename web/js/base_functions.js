@@ -1,8 +1,5 @@
 //instaces
 
-var SERVERS = [];
-var USERS = [];
-
 async function get_page(path) {
     try {
         var response = await fetch(path);
@@ -34,3 +31,10 @@ async function open_chat(elem) {
     tempElement.getElementsByClassName('window-title')[0].textContent = chat_name;
     document.getElementById("workspace-content").insertAdjacentHTML("beforeend", tempElement.innerHTML);
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    for(friend in FRIENDS) {
+        var elem = get_page("fragments/social_container.php");
+        document.getElementById("nav").insertAdjacentHTML("beforeend", elem.innerHTML);
+    }
+});
