@@ -48,8 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 //load elems:
 async function load_nav() {
-    var nav_page = await get_page("fragments/nav.html")
-    console.log(nav_page);
+    var nav_page = await get_page("fragments/nav.html");
     insert_html(nav_page, "main", "afterbegin");
     return nav_page;
 }
