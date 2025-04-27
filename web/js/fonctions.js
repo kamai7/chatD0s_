@@ -32,14 +32,14 @@ function display_before(elemToDisplay) {
 
 //fonctions
 
-async function open_chat(elem) {
-    var chat_name = elem.getElementsByClassName("username")[0].innerText;
+async function open_chat(name) {
+    var chats = "";
+    chats += await load_fragment("message", {name: name});
+    chats += await load_fragment("message", {name: name});
 
-    var data = await load_fragment("fragments/window.php");
-    var tempElement = document.createElement('div');
-    tempElement.innerHTML = data;
-    tempElement.getElementsByClassName('window-title')[0].textContent = chat_name;
-    document.getElementById("workspace-content").insertAdjacentHTML("beforeend", tempElement.innerHTML);
+    var chat_window = await load_fragment("chat", {title: name, content: chats});
+    var window = await load_fragment("window", {title: name, content: chat_window});
+    insert_html(window, "workspace-content", "afterbegin");
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -51,7 +51,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
 //load elems:
 async function load_nav() {
-    var nav_page = await load_fragment("nav");
+    var friends_html = "";
+    for (var friend in FRIENDS) {
+        friends_html += await load_fragment("social_container", FRIENDS[friend]);
+    }
+    var nav_page = await load_fragment("nav", {content : friends_html});
     insert_html(nav_page, "main", "afterbegin");
     return nav_page;
+}
+
+async function open_settings() {
+    var settings_page = await load_fragment("window",{title:"settings", content:":)"});
+    insert_html(settings_page, "workspace-content", "afterbegin");
 }
