@@ -1,7 +1,7 @@
 //instaces
 
 //get a page
-async function get_page(path) {
+async function load_fragment(path) {
     try {
         var response = await fetch(path);
         var data = await response.text();
@@ -32,7 +32,7 @@ function display_before(elemToDisplay) {
 async function open_chat(elem) {
     var chat_name = elem.getElementsByClassName("username")[0].innerText;
 
-    var data = await get_page("fragments/window.php");
+    var data = await load_fragment("fragments/window.php");
     var tempElement = document.createElement('div');
     tempElement.innerHTML = data;
     tempElement.getElementsByClassName('window-title')[0].textContent = chat_name;
@@ -41,14 +41,14 @@ async function open_chat(elem) {
 
 document.addEventListener("DOMContentLoaded", () => {
     for(friend in FRIENDS) {
-        var elem = get_page("fragments/social_container.php");
+        var elem = load_fragment("fragments/social_container.php");
         document.getElementById("nav").insertAdjacentHTML("beforeend", elem.innerHTML);
     }
 });
 
 //load elems:
 async function load_nav() {
-    var nav_page = await get_page("fragments/nav.html");
+    var nav_page = await load_fragment("fragments/nav.html");
     insert_html(nav_page, "main", "afterbegin");
     return nav_page;
 }

@@ -79,7 +79,7 @@ async function window_minimize(elem) {
     windowElement.remove();
 
     var tempElement = document.createElement('div');
-    tempElement.innerHTML = await get_page("fragments/window_minimised.php");
+    tempElement.innerHTML = await load_fragment("fragments/window_minimised.php");
     tempElement.getElementsByClassName('window-title')[0].textContent = chat_name;
     document.getElementById("workspace-windows").insertAdjacentHTML("afterbegin", tempElement.innerHTML);
 }
@@ -90,7 +90,7 @@ async function window_retrieve(elem) {
     windowElement.remove();
 
     var tempElement = document.createElement('div');
-    tempElement.innerHTML = await get_page("fragments/window.php");
+    tempElement.innerHTML = await load_fragment("fragments/window.php");
     tempElement.getElementsByClassName('window-title')[0].textContent = chat_name;
     document.getElementById("workspace-content").insertAdjacentHTML("afterbegin", tempElement.innerHTML);
 }
