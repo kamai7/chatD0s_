@@ -1,12 +1,20 @@
-<div class="social-container" onclick="open_chat(this)">
+<!--
+Elément de la liste des salons
+    - pp_link : lien de l'image
+    - name : nom du salon
+    - status : type de status (classe html, soit "status-online" soit "status-offline")
+    - status_text : texte du status
+-->
+
+<div class="social-container" onclick="open_chat({{name}})">
     <div class="pp-container">
-        <img src="img/illustrations/not-log-user.png">
+        <img src="{{pp_link}}">
     </div>
     <div class="content-container">
-        <span class="username"><?php echo $user;?></span>
+        <span class="username">{{name}}</span>
         <div class="social-status">
-            <div class="status-icon"></div>
-            <span class="status-text"> bonjour :)</span>
+            <div class="status-icon {{status}}"></div>
+            <span class="status-text">{{status_text}}</span>
         </div>
     </div>
 </div>
@@ -40,8 +48,14 @@
     .status-icon{
         aspect-ratio: 1/1;
         width: 16px;
-        background-color: rgb(100, 255, 100);
         border-radius: 50%;
+        
+        .status-online{
+            background-color: rgb(100, 255, 100);
+        }
+        .status-offline{
+            background-color: rgb(255, 100, 100);
+        }
     }
     .content-container{
         display: flex;

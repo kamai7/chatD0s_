@@ -1,16 +1,12 @@
+<!--
+Contenu de la fenêtre du terminal
+    - content : lignes du terminal (éléments html)
+-->
+
 <div class="terminal">
     <div class="terminal-body">
         <!-- Besoin du container sinon ça fait bugger la taille du terminal -->
-        <div class="terminal-body-container">
-            <?php include 'message.php' ?>
-            <div class="terminal-line">azkelfjalkjzhflkjqhzeklfj;hqeui"hrliqjkbdfjkwbhelzijfhbqlzieujhnflkqjzbeklqg'rtliuqzelitglzeiuUGLI</div>
-            <?php include 'message.php' ?>
-            <div class="terminal-line">azkelfjalkjzhflkjqhzeklfj;hqeui"hrliqjkbdfjkwbhelzijfhbqlzieujhnflkqjzbeklqg'rtliuqzelitglzeiuUGLI</div>
-            <?php include 'message.php' ?>
-            <div class="terminal-line">azkelfjalkjzhflkjqhzeklfj;hqeui"hrliqjkbdfjkwbhelzijfhbqlzieujhnflkqjzbeklqg'rtliuqzelitglzeiuUGLI</div>
-            <?php include 'message.php' ?>
-            <div class="terminal-line">azkelfjalkjzhflkjqhzeklfj;hqeui"hrliqjkbdfjkwbhelzijfhbqlzieujhnflkqjzbeklqg'rtliuqzelitglzeiuUGLI</div>
-        </div>
+        <div class="terminal-body-container">{{content}}</div>
     </div>
     <div class="terminal-footer">
         <input type="text" class="terminal-input" placeholder="Ecrivez une commande..." autocomplete="off">

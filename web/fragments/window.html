@@ -1,13 +1,19 @@
+<!--
+Fenêtre pouvant contenir des interfaces
+    - title : titre de la fenêtre
+    - content : corps de la fenêtre (éléments html)
+-->
+
 <div class="window window-visible">
     <div class="window-header">
-        <div class="window-title" onmousedown="window_drag(event,this)"></div>
+        <div class="window-title" onmousedown="window_drag(event,this)">{{title}}</div>
         <div class="window-buttons">
             <div class="window-button window-minimize" onclick="window_minimize(this)">_</div>
             <div class="window-button window-maximize" onclick="window_maximize(this)">[]</div>
             <div class="window-button window-close" onclick="window_close(this)">X</div>
         </div>
     </div>
-    <?php include 'terminal.php'; ?>
+    {{content}}
 </div>
 
 <style>

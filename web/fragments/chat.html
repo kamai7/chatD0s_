@@ -1,13 +1,12 @@
+<!--
+Contenu de la fenêtre de chat
+    - messages : liste des messages (éléments html)
+-->
+
 <div class="chat">
     <div class="chat-body">
         <!-- Besoin du container sinon ça fait bugger la taille du chat -->
-        <div class="chat-body-container">
-            <?php
-            $message_username='User';
-            $message_content='kakou';
-            require 'message.php';
-            ?>
-        </div>
+        <div class="chat-body-container">{{messages}}</div>
     </div>
     <div class="chat-footer">
         <input type="text" class="chat-input" placeholder="Ecrivez un message..." autocomplete="off">

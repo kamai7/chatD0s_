@@ -1,8 +1,15 @@
+<!--
+Message contenu dans un salon
+    - pp_link : lien de la photo de profil
+    - username : nom d'utilisateur
+    - content : contenu du message (texte ou html)
+-->
+
 <div class="chat-message">
-    <div class="chat-message-profile"><img src="img/illustrations/not-log-user.png"></div>
+    <div class="chat-message-profile"><img src="{{pp_link}}"></div>
     <div class="chat-message-body">
-        <div class="chat-message-username">dqz</div>
-        <div class="chat-message-content">sqdd</div>
+        <div class="chat-message-username">{{username}}</div>
+        <div class="chat-message-content">{{content}}</div>
     </div>
 </div>
 <style>
