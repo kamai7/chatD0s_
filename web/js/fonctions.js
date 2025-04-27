@@ -1,11 +1,14 @@
 //instaces
 
 //get a page
-async function load_fragment(path) {
+async function load_fragment(frag_name, values={}) {
     try {
-        var response = await fetch(path);
-        var data = await response.text();
-        return await data;
+        var response = await fetch("fragments/" + frag_name + ".html");
+        var fragment = await response.text();
+        for (var key in values) {
+            fragment = fragment.replace("{{" + key + "}}", values[key]);
+        }
+        return fragment;
     } catch (error) {
         console.error('Erreur lors du chargement de ' + path + ':', error);
     }
@@ -48,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 //load elems:
 async function load_nav() {
-    var nav_page = await load_fragment("fragments/nav.html");
+    var nav_page = await load_fragment("nav");
     insert_html(nav_page, "main", "afterbegin");
     return nav_page;
 }
