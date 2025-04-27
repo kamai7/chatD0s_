@@ -12,6 +12,8 @@
     
     --border-light: rgb(108, 69, 206);
     --glow: rgba(108, 69, 206, 0.5);
+
+    --icons: rgb(61, 61, 61);
 }
 @font-face {
 	font-family: 'main';
@@ -29,6 +31,11 @@
     background-color: var(--dark);
     border-radius: 10px;
 }
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration { display: none; }
 
 body, html{
     margin : 0;
@@ -56,7 +63,7 @@ header{
     justify-content: space-between;
     align-items: center;
     padding-left: 4%;
-    padding-right: 4%;
+    padding-right: 3%;
 }
 main{
     background-color: rgb(26, 26, 26);
@@ -76,21 +83,19 @@ nav{
     width: 100%;
 }
 /*classes*/
+.header-interractions{
+    display: flex;
+    width: 45%;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .button-icon{
     cursor: pointer;
     display: flex;
     aspect-ratio: 1/1;
-    height: 70%;
+    height: 70px;
     align-items: center;
-}
-.button-icon:hover{
-    transform: scale(1.06);
-    transition: 0.2s;
-}
-
-.header-user-icon{
-    border: rgb(77, 77, 77) 4px solid;
-    border-radius: 50%;
 }
 
 .button-icon-img{
@@ -105,19 +110,44 @@ nav{
 }
 
 .button-bordered{
-    border: 3px solid gray;
+    border: 3px solid var(--icons);
     border-radius: 10px;
 }
 
-.search-bar{
-    all: unset;
-    background-color: rgb(68, 68, 68);
-    border-radius: 10px;
-    padding: 6px;
+.button-hover:hover{
+    transform: scale(1.05);
+    transition: 0.2s;
 }
+
+.search-icon{
+    margin-right: 4px;
+    filter: opacity(0.5);
+    cursor: pointer;
+}
+
+.hide-arrow{
+    aspect-ratio: 1/1;
+    height: 35px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+
 /*id*/
 #app-name{
     font-size: 3em;
+}
+
+.hide-arrow > img{
+    filter: brightness(0.3);
+    height: 100%;
+    scale: 1.2;
+}
+
+.hide-arrow:hover > img{
+    transition: 0.2s;
+    scale: 1;
 }
 
 #header-button{
@@ -133,7 +163,6 @@ nav{
 
 #main-search-bar-container{
     display: flex;
-    flex-direction: row;
     align-items: center;
     justify-content: center;
     padding: 2px;
@@ -141,6 +170,26 @@ nav{
     background: rgb(255,0,206);
     background: linear-gradient(190deg, rgba(255,0,206,1) 0%, rgba(29,0,255,1) 100%);
     filter: hue-rotate(var(--hue));
+    filter: drop-shadow(0 0 15px var(--border-glow));
+    height: 44px;
+    width: 40%;
+}
+
+#main-search-bar-border{
+    background-color: rgb(68, 68, 68);
+    border-radius: 10px;
+    height: calc(100% - 4px);
+    width: calc(100% - 4px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#main-search-bar{
+    all: unset;
+    width: 100%;
+    border-radius: 10px;
+    margin-left: 4px;
 }
 
 #workspace{

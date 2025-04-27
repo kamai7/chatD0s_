@@ -1,8 +1,8 @@
 <nav id="nav">
     <div id="nav-selection">
         <div id="nav-selection-cross">
-            <div class="button-icon button-bordered">
-                <img src="img/ui/cross.png" class="button-icon-img">
+            <div class="hide-arrow button-bordered button-hover">
+                <img src="img/ui/arrow-hide-left.svg">
             </div>
         </div>
         <div id="nav-selection-select">
@@ -12,11 +12,7 @@
     </div>
 
     <div id="nav-social">
-        <?php
-        foreach ($_SESSION['users'] as $user) {
-            include 'fragments/social_container.php';
-        }
-        ?>
+        <!-- socials containers -->
     </div>
 </nav>
 <style>
@@ -47,9 +43,9 @@
 }
 
 #nav-selection-select > span:hover{
-    color: rgb(77, 196, 41);
+    filter: brightness(1.5);
     transition: 0.2s;
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 #nav-social{
     display: flex;
