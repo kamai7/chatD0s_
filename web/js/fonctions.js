@@ -6,7 +6,7 @@ async function load_fragment(frag_name, values={}) {
         var response = await fetch("fragments/" + frag_name + ".html");
         var fragment = await response.text();
         for (var key in values) {
-            fragment = fragment.replace("{{" + key + "}}", values[key]);
+            fragment = fragment.replaceAll("{{" + key + "}}", values[key]);
         }
         return fragment;
     } catch (error) {
