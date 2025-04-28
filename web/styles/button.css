@@ -1,0 +1,32 @@
+/*
+ * Styles pour le fragment 'button'
+ */
+
+.button-icon{
+    cursor: pointer;
+    display: flex;
+    aspect-ratio: 1/1;
+    height: 70px;
+    align-items: center;
+}
+
+.button-icon-img{
+    height: 100%;
+}
+
+.small-button{
+    width: 70%;
+    height: fit-content;
+    filter: drop-shadow(0 0 15px var(--border-glow));
+    filter: hue-rotate(var(--hue));
+}
+
+.button-bordered{
+    border: 3px solid var(--icons);
+    border-radius: 10px;
+}
+
+.button-hover:hover{
+    transform: scale(1.05);
+    transition: 0.2s;
+}

@@ -1,0 +1,60 @@
+/*
+ * Styles pour le fragment 'social_container'
+ */
+
+.social-container{
+    background-color: var(--dark);
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.pp-container{
+    width: 28%;
+    display: flex;
+    margin-left: 5px;
+    min-width: 50px;
+    align-items: center;
+}
+
+.pp-container img{
+    width: 100%;
+    aspect-ratio: 1/1;
+}
+
+.social-status{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.status-icon{
+    aspect-ratio: 1/1;
+    width: 16px;
+    border-radius: 50%;
+    
+    &.status-online{
+        background-color: rgb(100, 255, 100);
+    }
+    &.status-offline{
+        background-color: rgb(255, 100, 100);
+    }
+}
+
+.content-container{
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+}
+
+.status-text{
+    margin-left: 5px;
+    color: gray;
+    font-size: 0.7em;
+    word-break: break-all;
+    max-width: 80%;
+}

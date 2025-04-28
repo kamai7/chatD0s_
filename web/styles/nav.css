@@ -1,0 +1,51 @@
+/*
+ * Styles pour le fragment 'nav'
+ */
+
+nav{
+    width: 20%;
+    height: 100%;
+    background-color: var(--dark-secondary);
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+#nav-selection{
+    height: 100px;
+    background-color: var(--dark);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#nav-selection-cross{
+    height: 50%;
+    padding: 10px 0 0 10px;
+}
+
+#nav-selection-select{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 50%;
+}
+
+#nav-selection-select > span{
+    text-decoration: underline;
+    color: rgb(68, 68, 68);
+    cursor: pointer;
+}
+
+#nav-selection-select > span:hover{
+    filter: brightness(1.5);
+    transition: 0.2s;
+    transform: scale(1.05);
+}
+#nav-social{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    overflow-y: auto;
+    gap: 10px;
+}

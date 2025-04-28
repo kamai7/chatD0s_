@@ -1,3 +1,13 @@
+@import url('./styles/button.css');
+@import url('./styles/chat.css');
+@import url('./styles/login.css');
+@import url('./styles/message.css');
+@import url('./styles/nav.css');
+@import url('./styles/social_container.css');
+@import url('./styles/window_minimised.css');
+@import url('./styles/window.css');
+
+
 /*instaces*/
 :root{
     --border-glow : rgb(59, 40, 168);
@@ -71,52 +81,15 @@ main{
     display: flex;
     flex-direction: row;
 }
-nav{
-    width: 20%;
-    height: 100%;
-    background-color: var(--dark-secondary);
-    display: flex;
-    flex-direction: column;
-    overflow-y: auto;
-}
 #workspace{
     width: 100%;
 }
 /*classes*/
-.header-interractions{
+.header-interactions{
     display: flex;
     width: 45%;
     justify-content: space-between;
     align-items: center;
-}
-
-.button-icon{
-    cursor: pointer;
-    display: flex;
-    aspect-ratio: 1/1;
-    height: 70px;
-    align-items: center;
-}
-
-.button-icon-img{
-    height: 100%;
-}
-
-.small-button{
-    width: 70%;
-    height: fit-content;
-    filter: drop-shadow(0 0 15px var(--border-glow));
-    filter: hue-rotate(var(--hue));
-}
-
-.button-bordered{
-    border: 3px solid var(--icons);
-    border-radius: 10px;
-}
-
-.button-hover:hover{
-    transform: scale(1.05);
-    transition: 0.2s;
 }
 
 .search-icon{
