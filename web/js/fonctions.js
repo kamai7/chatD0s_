@@ -32,12 +32,12 @@ function display_before(elemToDisplay) {
 
 //fonctions
 
-async function open_chat(name) {
+async function open_chat(self, name) {
     var chats = "";
-    chats += await load_fragment("message", {name: name});
-    chats += await load_fragment("message", {name: name});
+    chats += await load_fragment("message", {pp_link: USER_ICON, username: name, content: "coucou"});
+    chats += await load_fragment("message", {pp_link: USER_ICON, username: name, content: "coucou"});
 
-    var chat_window = await load_fragment("chat", {title: name, content: chats});
+    var chat_window = await load_fragment("chat", {messages: chats});
     var window = await load_fragment("window", {title: name, content: chat_window});
     insert_html(window, "workspace-content", "afterbegin");
 }

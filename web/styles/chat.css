@@ -16,7 +16,7 @@
     flex-grow: 1;
     margin-bottom: 10px;
     padding: 5px;
-    color: var(--text-primary);
+    color: var(--primary);
     overflow-y: auto;
     display: flex;
     flex-direction: column;
@@ -32,7 +32,7 @@
     display: flex;
     padding: 5px;
     background-color: var(--secondary);
-    border: 2px solid var(--border);
+    border: 2px solid var(--border-glow);
     filter: drop-shadow(0 0 5px var(--glow));
     border-radius: 12px;
 }
