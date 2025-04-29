@@ -2,9 +2,9 @@
  * Styles pour le fragment 'message'
  */
 
-.chat-message {
+ .chat-message {
     display: flex;
-    margin: 5px 0;
+    margin: 5px 0px 20px;
 }
 
 .chat-message-profile {
@@ -27,4 +27,9 @@
 
 .chat-message-content {
     font-weight: 100;
+    color: var(--text-primary);
+}
+
+.command-result{
+    margin-left: 20px;
 }
