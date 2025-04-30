@@ -2,15 +2,16 @@
 
 //get a page
 async function load_fragment(frag_name, values={}) {
+    const path = "fragments/" + frag_name + ".html";
     try {
-        var response = await fetch("fragments/" + frag_name + ".html");
+        var response = await fetch(path);
         var fragment = await response.text();
         for (var key in values) {
             fragment = fragment.replaceAll("{{" + key + "}}", values[key]);
         }
         return fragment;
     } catch (error) {
-        console.error('Erreur lors du chargement de ' + path + ':', error);
+        console.error('Erreur lors du chargement de ' + path + ' : ', error);
     }
 }
 
