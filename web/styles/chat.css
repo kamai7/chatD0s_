@@ -7,7 +7,7 @@
     flex-direction: column;
     margin: 5px;
     padding: 10px;
-    background-color: var(--primary);
+    background-color: var(--dark-secondary);
     border-radius: 6px;
     height: calc(100% - 51px);
 }
@@ -31,7 +31,7 @@
 .chat-footer {
     display: flex;
     padding: 5px;
-    background-color: var(--secondary);
+    background-color: var(--dark-secondary);
     border: 2px solid var(--border-glow);
     filter: drop-shadow(0 0 5px var(--glow));
     border-radius: 12px;
@@ -46,7 +46,6 @@
 
 .chat-send {
     margin: 0 5px;
-    background-color: var(--border-glow);
     background-color: var(--border-glow);
     border-radius: 12px;
     padding: 3px 7px;
