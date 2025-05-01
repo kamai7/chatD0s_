@@ -1,10 +1,7 @@
-
-
 class Fragment {
-    constructor(id, frag_name, location, params) {
-        this.id = id;
+    constructor(frag_name, location) {
+        this.id = 0; //todo id random
         this.path = "fragments/" + frag_name + ".html";
-        this.params = params;
         this.location = document.getElementById(location);
     }
 
@@ -18,9 +15,6 @@ class Fragment {
             var response = await fetch(this.path);
             var fragment = await response.text();
             fragment = fragment.replaceAll("{{id}}", this.id);
-            for (var key in this.params) {
-                fragment = fragment.replaceAll("{{" + key + "}}", this.params[key]);
-            }
             return fragment;
         } catch (error) {
             console.error('Erreur lors du chargement de ' + this.path + ' : ', error);
