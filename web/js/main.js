@@ -2,15 +2,12 @@
 // add nav bar after document load
 addEventListener("DOMContentLoaded", async (event) => {
     nav_page = await load_nav();
-
-    button_terminal = await load_fragment("button", {"action" : "open_terminal()", "link" : TERMINAL_ICON});
-    button_user = await load_fragment("button", {"action" : "f()", "link" : USER_ICON});
-    button_settings = await load_fragment("button", {"action" : "open_settings()", "link" : SETTINGS_ICON});
-    insert_html(button_terminal, "header-button", "beforeend");
-    insert_html(button_user, "header-button", "beforeend");
-    insert_html(button_settings, "header-button", "beforeend");
-
-    
+    button_terminal = new Fragment("button-terminal", "button", "header-button", {"action" : "open_terminal()", "link" : TERMINAL_ICON});
+    button_user = new Fragment("button-user", "button", "header-button", {"action" : "f()", "link" : USER_ICON});
+    button_settings = new Fragment("button-settings", "button", "header-button", {"action" : "open_settings()", "link" : SETTINGS_ICON});
+    button_settings.insert();
+    button_user.insert();
+    button_terminal.insert();
 });
 
 function f(){
