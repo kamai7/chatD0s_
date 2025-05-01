@@ -1,6 +1,9 @@
 
 // add nav bar after document load
 addEventListener("DOMContentLoaded", async (event) => {
+
+    BlinklAppName();
+
     nav_page = await load_nav();
     button_terminal = new Button(TERMINAL_ICON, "open_terminal()");
     button_user = new Button(USER_ICON, "open_user()");
@@ -8,6 +11,8 @@ addEventListener("DOMContentLoaded", async (event) => {
     button_settings.insert("header-button");
     button_user.insert("header-button");
     button_terminal.insert("header-button");
+
+
 });
 
 function f(){

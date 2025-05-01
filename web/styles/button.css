@@ -6,8 +6,8 @@
     cursor: pointer;
     display: flex;
     aspect-ratio: 1/1;
-    height: 70px;
     align-items: center;
+    justify-content: center;
 }
 
 .button-icon-img{
@@ -28,5 +28,7 @@
 
 .button-hover:hover{
     transform: scale(1.05);
+    filter: brightness(1.2);
+    filter: drop-shadow(0 0 10px rgba(255, 208, 0, 0.2));
     transition: 0.2s;
 }

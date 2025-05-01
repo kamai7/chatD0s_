@@ -52,3 +52,14 @@ async function open_terminal() {
     var window = await load_fragment("window", {title: "CD0s_ command prompt", content: terminal_window});
     insert_html(window, "workspace-content", "beforeend");
 }
+
+async function BlinklAppName() {
+    const element = document.getElementById('app-name');
+  
+    var toggle = true;
+    while (true) {
+      element.textContent = toggle ? 'ChatD0s_' : 'ChatD0s';
+      toggle = !toggle;
+      await new Promise(resolve => setTimeout(resolve, 1000));
+    }
+  }

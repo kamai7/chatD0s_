@@ -9,14 +9,19 @@
     flex-direction: row;
     border-radius: 10px;
     cursor: pointer;
+    align-items: center;
+    max-height: 100px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .pp-container{
-    width: 28%;
     display: flex;
     margin-left: 5px;
-    min-width: 50px;
     align-items: center;
+    width: 28%;
+    max-width: 60px;
+    min-width: 30px;
 }
 
 .pp-container img{
@@ -28,13 +33,13 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    height: 100%;
     width: 100%;
+    margin-top: 5px;
 }
 
 .status-icon{
     aspect-ratio: 1/1;
-    width: 16px;
+    width: 14px;
     border-radius: 50%;
     
     &.status-online{
@@ -49,6 +54,9 @@
     display: flex;
     flex-direction: column;
     margin: 5px;
+    width: 100%;
+    height: 100%;
+    overflow-wrap: anywhere;
 }
 
 .status-text{
@@ -58,3 +66,7 @@
     word-break: break-all;
     max-width: 80%;
 }
+
+.username{
+    margin-top: 5px;
+}	
