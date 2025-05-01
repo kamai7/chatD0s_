@@ -28,7 +28,7 @@ class Window extends Fragment {
 
     async get_html() {
         var html = await this.get_fragment();
-        html = html.replaceAll("{{titles}}", this.title);
+        html = html.replaceAll("{{title}}", this.title);
         html = html.replaceAll("{{content}}", await this.content.get_html());
         return html; 
     }

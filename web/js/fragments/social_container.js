@@ -15,7 +15,7 @@ class Social_container extends Fragment {
 
     async init() {
         this.dom_elem = document.getElementById(this.id);
-        this.dom_elem.addEventListener("click", this.open_chat(this));
+        this.dom_elem.addEventListener("click", this.open_chat.bind(this));
     }
 
     async get_html(){
@@ -28,8 +28,8 @@ class Social_container extends Fragment {
         return fragment;
     }
 
-    async open_chat(objet) {
-        var messages = [new Message(USER_ICON, objet.name, "Coucou"), new Message(USER_ICON, objet.name, "Coucou")];
+    async open_chat() {
+        var messages = [new Message(USER_ICON, this.name, "Coucou"), new Message(USER_ICON, this.name, "Coucou")];
         var chat_page = new Chat(messages);
 
         var window = new Window(this.name, chat_page);
