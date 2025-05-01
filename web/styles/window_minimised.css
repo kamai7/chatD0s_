@@ -20,6 +20,10 @@
     cursor: pointer;
 }
 
+.window-minimized .window-content {
+    display: none;
+}
+
 .window-button {
     color: white;
     padding: 0 5px;
