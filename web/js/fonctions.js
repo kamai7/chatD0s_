@@ -7,12 +7,6 @@ function reload(element_id){
     container.innerHTML= content;
 }
 
-
-function display_before(elemToDisplay) {
-    var parentElement = elemToDisplay.parentNode;
-    parentElement.appendChild(elemToDisplay);
-}
-
 //fonctions
 
 async function open_chat(self, name) {
