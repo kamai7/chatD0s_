@@ -1,6 +1,9 @@
 /*
  * Styles pour le fragment 'window_minimised'
  */
+.window-content{
+    height: 100%;
+}
 
 .window.window-visible {
     left: 500px;

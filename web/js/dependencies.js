@@ -10,25 +10,25 @@ const FRIENDS = [
     {
         pp_link : USER_ICON,
         name : "jean Michel",
-        status : "status-online",
+        status : true,
         status_text : "coucou :)"
     },
     {
         pp_link : USER_ICON,
         name : "silly :3",
-        status : "status-online",
+        status : true,
         status_text : "coucou :)"
     },
     {
         pp_link : USER_ICON,
         name : "shadow wisard",
-        status : "status-offline",
+        status : false,
         status_text : "coucou :)"
     },
     {
         pp_link : USER_ICON,
         name : "money gang",
-        status : "status-online",
+        status : true,
         status_text : "coucou :)"
     }
 ];

@@ -27,18 +27,15 @@ async function open_chat(self, name) {
 
 //load elems:
 async function load_nav() {
-    var friends_list = [];
-    for (var friend in FRIENDS) {
-        friends_list.push(new Fragment("social_container_" + friend, "social_container", "nav", FRIENDS[friend]));
+    var friends = [];
+    for (var friend of FRIENDS) {
+        friends.push(new Social_container(friend["pp_link"], friend["name"], friend["status"], friend["status_text"]));
     }
-    friends_html = "";
-    for (var friend in friends_list) {
-        friends_html += await friends_list[friend].get_fragment();
+    var nav = new Nav(friends);
+    await nav.insert("main","afterbegin");
+    for (var friend of friends) {
+        await friend.init();
     }
-
-    nav_page = new Fragment("nav", "nav", "main", {"content" : friends_html});
-    nav_page.insert("afterbegin");
-    return nav_page;
 }
 
 async function open_settings() {

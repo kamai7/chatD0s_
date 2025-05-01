@@ -9,7 +9,7 @@
     padding: 10px;
     background-color: var(--dark-secondary);
     border-radius: 6px;
-    height: calc(100% - 51px);
+    height: 100%;
 }
 
 .chat-body {

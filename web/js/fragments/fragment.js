@@ -1,13 +1,13 @@
 class Fragment {
-    constructor(frag_name, location) {
-        this.id = 0; //todo id random
+    constructor(frag_name) {
+        this.id = Math.random().toString(36).substring(2); //todo id random
+        this.dom_elem;
         this.path = "fragments/" + frag_name + ".html";
-        this.location = document.getElementById(location);
     }
 
-    async insert(placement = "beforeend"){
-        var fragment = await this.get_fragment();
-        this.insert_html(fragment, this.location.id, placement);
+    async insert(parent_id,placement = "beforeend"){
+        var elem = await this.get_html();
+        document.getElementById(parent_id).insertAdjacentHTML(placement, elem);
     }
 
     async get_fragment(){
@@ -21,12 +21,8 @@ class Fragment {
         }
     }
 
-    insert_html(elem, location_id, placement) {
-        const locationElem = document.getElementById(location_id);
-        if (locationElem) {
-            locationElem.insertAdjacentHTML(placement, elem);
-        } else {
-            console.error(`Element with id "${location_id}" not found.`);
-        }
+    async update() {
+        var fragment = this.get_html().getElementById(this.id).content();
+        this.dom_elem.innerHTML = fragment;
     }
 }
