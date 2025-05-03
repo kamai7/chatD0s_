@@ -18,6 +18,7 @@ class Fragment {
         var elem = await this.get_html();
         document.getElementById(parent_id).insertAdjacentHTML(placement, elem);
         this.dom_elem = document.getElementById(this.id);
+        this.init();
     }
 
     /**
@@ -42,4 +43,6 @@ class Fragment {
         var fragment = this.get_html().getElementById(this.id).content();
         this.dom_elem.innerHTML = fragment;
     }
+
+    init(){}
 }

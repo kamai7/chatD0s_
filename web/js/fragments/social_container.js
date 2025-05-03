@@ -14,7 +14,6 @@ class Social_container extends Fragment {
     }
 
     async init() {
-        this.dom_elem = document.getElementById(this.id);
         this.dom_elem.addEventListener("click", this.open_chat.bind(this));
     }
 
@@ -35,7 +34,5 @@ class Social_container extends Fragment {
         var window = new Window(this.name, chat_page);
 
         await window.insert("workspace-content");
-
-        await window.init();
     }
 }

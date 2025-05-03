@@ -1,0 +1,21 @@
+
+
+.drop-down-menu{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: var(--primary);
+    opacity: 0.8;
+    border-radius: 15px;
+    height: min-content;
+    gap: 10px;
+}
+
+.drop-down-menu .button::after{
+    content: "";
+    height: 2px;
+    background: linear-gradient(90deg,rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.25) 50%, rgba(255, 255, 255, 0.15) 100%);
+    margin-top: 5px;
+    width: 100%;
+}

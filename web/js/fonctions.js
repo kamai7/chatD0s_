@@ -27,9 +27,6 @@ async function load_nav() {
     }
     var nav = new Nav(friends);
     await nav.insert("main","afterbegin");
-    for (var friend of friends) {
-        await friend.init();
-    }
 }
 
 async function open_settings() {
@@ -59,7 +56,13 @@ async function BlinklAppName() {
   }
 
 async function open_user() {
-    console.log("open_user");
+    var source = button_user;
+
+    var list_button = [new Text_Button("Settings", open_settings), new Text_Button("Terminal", open_terminal)];
+    
+    var user_menu = new DropDown(list_button, source);
+    await user_menu.insert("workspace-content");
+    await user_menu.init();
 }
 
 async function open_settings() {
