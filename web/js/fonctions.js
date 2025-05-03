@@ -57,3 +57,11 @@ async function BlinklAppName() {
       await new Promise(resolve => setTimeout(resolve, 1000));
     }
   }
+
+async function open_user() {
+    console.log("open_user");
+}
+
+async function open_settings() {
+    console.log("open_settings");
+}

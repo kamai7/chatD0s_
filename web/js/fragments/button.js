@@ -6,10 +6,14 @@ class Button extends Fragment {
         this.size = size;
     }
 
+    async init() {
+        this.dom_elem = document.getElementById(this.id);
+        this.dom_elem.addEventListener("click", this.action.bind(this));
+    }
+
     async get_html() {
         var fragment = await this.get_fragment();
         fragment = fragment.replaceAll("{{link}}", this.image_link);
-        fragment = fragment.replaceAll("{{action}}", this.action);
         fragment = fragment.replaceAll("{{size}}", this.size);
         return fragment;
     }
