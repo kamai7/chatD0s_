@@ -182,7 +182,9 @@ class Window extends Fragment {
      * Focus la fenêtre actuelle en la déplaçant au premier plan.
      */
     focus() {
-        if (!this.minimized) {
+        // On déplace la fenêtre au premier plan si elle n'est pas minimisée
+        // et qu'elle n'est pas déjà au premier plan
+        if (!this.minimized && this.dom_elem.parentNode.querySelector(".window:last-child") !== this.dom_elem) {
             this.dom_elem.parentNode.appendChild(this.dom_elem);
         }
     }
