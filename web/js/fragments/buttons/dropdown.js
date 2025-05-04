@@ -1,7 +1,6 @@
 class Dropdown extends Fragment {
     constructor(list_button, source) {
-        super("drop_down_menu")
-        this.list_button = list_button;
+        super("drop_down_menu", list_button);
         this.source = source.dom_elem;
     }
 
@@ -16,11 +15,6 @@ class Dropdown extends Fragment {
 
     async get_html(){
         var fragment = await this.get_fragment();
-        var buttons_html = "";
-        for(var button of this.list_button){
-            buttons_html += await button.get_html();
-        }
-        fragment = fragment.replaceAll("{{content}}", buttons_html);
         return fragment;
     }
 

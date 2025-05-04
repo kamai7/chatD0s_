@@ -8,9 +8,8 @@ class Window extends Fragment {
      * @param {number} height - La hauteur de la fenêtre (0 par défaut).
      */
     constructor(title, content, maximized=false, width=0, height=0) {
-        super("window");
+        super("window",[content]);
         this.title = title;
-        this.content = content;
 
         this.maximized = maximized;
         this.minimized = false;
@@ -47,9 +46,6 @@ class Window extends Fragment {
     async get_html() {
         var html = await this.get_fragment();
         html = html.replaceAll("{{title}}", this.title);
-        if (!this.minimized) {
-            html = html.replaceAll("{{content}}", await this.content.get_html());
-        }
         return html;
     }
 
@@ -63,6 +59,19 @@ class Window extends Fragment {
         this.height = h;
         this.dom_elem.style.w = `${w}px`;
         this.dom_elem.style.h = `${h}px`;
+    }
+
+    async insert(parent_id, placement = "beforeend") {
+        var elem = await this.get_html();
+
+        document.getElementById(parent_id).insertAdjacentHTML(placement, elem);
+        this.dom_elem = document.getElementById(this.id);
+        this.init();
+        if (!this.minimized) {
+            for(var elem of this.elems_list){
+                await elem.insert(this.id + "-content");
+            }
+        }
     }
 
     /**

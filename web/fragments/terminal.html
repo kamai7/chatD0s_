@@ -6,7 +6,7 @@ Contenu de la fenêtre du terminal
 <div class="terminal" id="{{id}}">
     <div class="terminal-body">
         <!-- Besoin du container sinon ça fait bugger la taille du terminal -->
-        <div class="terminal-body-container">{{content}}</div>
+        <div class="terminal-body-container" id="{{id}}-content"><!-- content --></div>
     </div>
     <div class="terminal-footer">
         <input type="text" class="terminal-input" placeholder="Ecrivez une commande..." autocomplete="off">

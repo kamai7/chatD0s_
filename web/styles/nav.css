@@ -44,7 +44,7 @@ nav{
     transition: 0.2s;
     transform: scale(1.05);
 }
-#nav-social{
+.nav-social{
     display: flex;
     flex-direction: column;
     padding: 10px;

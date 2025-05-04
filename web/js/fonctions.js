@@ -61,8 +61,7 @@ async function open_user() {
     var list_button = [new TextButton("Settings", open_settings), new TextButton("Terminal", open_terminal)];
     
     var user_menu = new Dropdown(list_button, source);
-    await user_menu.insert("workspace-content");
-    await user_menu.init();
+    await user_menu.insert("workspace");
 }
 
 async function open_settings() {
