@@ -1,4 +1,4 @@
-class Image_Button extends Button {
+class ImageButton extends Button {
     constructor(image_link, action, size = "70px") {
         super("image_button",image_link, action, size);
     }

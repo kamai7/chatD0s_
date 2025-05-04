@@ -1,4 +1,4 @@
-class DropDown extends Fragment {
+class Dropdown extends Fragment {
     constructor(list_button, source) {
         super("drop_down_menu")
         this.list_button = list_button;

@@ -1,4 +1,4 @@
-class Social_container extends Fragment {
+class SocialContainer extends Fragment {
     constructor(pp_link, name, online, status_text) {
         super("social_container");
         this.pp_link = pp_link;

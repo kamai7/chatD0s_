@@ -23,7 +23,7 @@ async function open_chat(self, name) {
 async function load_nav() {
     var friends = [];
     for (var friend of FRIENDS) {
-        friends.push(new Social_container(friend["pp_link"], friend["name"], friend["status"], friend["status_text"]));
+        friends.push(new SocialContainer(friend["pp_link"], friend["name"], friend["status"], friend["status_text"]));
     }
     var nav = new Nav(friends);
     await nav.insert("main","afterbegin");
@@ -44,7 +44,7 @@ async function open_terminal() {
     insert_html(window, "workspace-content", "beforeend");
 }
 
-async function BlinklAppName() {
+async function blink_app_name() {
     const element = document.getElementById('app-name');
   
     var toggle = true;
@@ -58,9 +58,9 @@ async function BlinklAppName() {
 async function open_user() {
     var source = button_user;
 
-    var list_button = [new Text_Button("Settings", open_settings), new Text_Button("Terminal", open_terminal)];
+    var list_button = [new TextButton("Settings", open_settings), new TextButton("Terminal", open_terminal)];
     
-    var user_menu = new DropDown(list_button, source);
+    var user_menu = new Dropdown(list_button, source);
     await user_menu.insert("workspace-content");
     await user_menu.init();
 }
