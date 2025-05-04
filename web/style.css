@@ -84,9 +84,7 @@ main{
     display: flex;
     flex-direction: row;
 }
-#workspace{
-    width: 100%;
-}
+
 /*classes*/
 .header-interactions{
     display: flex;
@@ -169,6 +167,7 @@ main{
 }
 
 #workspace{
+    width: 100%;
     display: flex;
     flex-direction: column;
 }
@@ -186,4 +185,7 @@ main{
     flex-direction: row;
     height: 100%;
     width: 100%;
+
+    position: relative;
+    overflow: hidden;
 }

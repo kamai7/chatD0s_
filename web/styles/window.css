@@ -1,24 +1,27 @@
 /*
- * Styles pour le fragment 'window_minimised'
+ * Styles pour le fragment 'window'
  */
 .window-content{
     height: 100%;
 }
 
 .window.window-visible {
-    left: 500px;
-    top: 200px;
-    position: absolute;
+    position: relative;
     width: 400px;
     height: 300px;
-    min-width: 400px;
-    min-height: 300px;
     
     display: flex;
     flex-direction: column;
     overflow: hidden;
     background-color: var(--dark);
     border-radius: 6px;
+
+    &.window-maximized {
+        left: 0 !important;
+        top: 0 !important;
+        width: 100%;
+        height: 100%;
+    }
 }
 
 .window-header {
