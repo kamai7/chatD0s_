@@ -36,6 +36,8 @@ class Window extends Fragment {
 
             const maximize_button = this.dom_elem.getElementsByClassName("window-maximize")[0];
             maximize_button.addEventListener("click", this.toggle_maximized.bind(this));
+            
+            this.dom_elem.addEventListener("click", this.focus.bind(this));
         }
 
         const close_button = this.dom_elem.getElementsByClassName("window-close")[0];
@@ -126,9 +128,8 @@ class Window extends Fragment {
 
     /**
      * Listener qui inverse l'état de maximisation de la fenêtre.
-     * @param {MouseEvent} event - L'événement de la souris.
      */
-    toggle_maximized(event) {
+    toggle_maximized() {
         this.set_maximized(!this.maximized);
     }
 
@@ -172,6 +173,8 @@ class Window extends Fragment {
      * Focus la fenêtre actuelle en la déplaçant au premier plan.
      */
     focus() {
-        this.dom_elem.parentNode.appendChild(this.dom_elem);
+        if (!this.minimized) {
+            this.dom_elem.parentNode.appendChild(this.dom_elem);
+        }
     }
 }

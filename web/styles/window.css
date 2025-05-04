@@ -6,7 +6,9 @@
 }
 
 .window.window-visible {
-    position: relative;
+    /* Position absolue mais relative au parent car le
+    parent (.workspace-content) est positionné en relatif */
+    position: absolute;
     width: 400px;
     height: 300px;
     
