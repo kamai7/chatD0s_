@@ -1,4 +1,21 @@
 
+async function open_user() {
+    var source = button_user;
+
+    var list_button = [new TextButton("Log in", open_log_in), new TextButton("Log out", f, color = "red")];
+    
+    var user_menu = new Dropdown(list_button, source);
+    await user_menu.insert("workspace");
+}
+
+async function open_settings() {
+    console.log("open_settings");
+}
+
+async function open_terminal() {
+    console.log("open_terminal");
+}
+
 // add nav bar after document load
 addEventListener("DOMContentLoaded", async (event) => {
 
