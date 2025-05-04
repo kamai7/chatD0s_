@@ -28,7 +28,10 @@ class SocialContainer extends Fragment {
     }
 
     async open_chat() {
-        var messages = [new Message(USER_ICON, this.name, "Coucou"), new Message(USER_ICON, this.name, "Coucou")];
+        var messages = [new Message(USER_ICON, this.name, "judfdbsbfibsdfbsfbkhef sbkjsfbjs fbobqdsfdskjnbqsdndnjlkdefsdfdsfesseffessfdfdsfbd ffbdbfbdsbf")];
+        for (var i = 0; i < 30; i++) {
+            messages.push(new Message(USER_ICON, this.name, "judfdbsbfdbdffbdbfbdsbf"));
+        }
         var chat_page = new Chat(messages);
 
         var window = new Window(this.name, chat_page);

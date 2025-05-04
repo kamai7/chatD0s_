@@ -16,7 +16,7 @@
     --border : rgb(82, 65, 175);
     --primary: rgb(41, 41, 41);
     --secondary: rgb(57, 57, 57);
-    --text-primary: rgb(210, 210, 210);
+    --text-primary: rgb(186, 186, 186);
     --text-secondary: rgb(110, 110, 110);
     --dark : rgb(8, 8, 8);
     --dark-secondary: rgb(18, 18, 18);
@@ -33,7 +33,8 @@
 }
 
 ::-webkit-scrollbar {
-    width: 10px;
+    width: 6px;
+    height: 6px;
 }
 ::-webkit-scrollbar-thumb {
     background-color: var(--glow);

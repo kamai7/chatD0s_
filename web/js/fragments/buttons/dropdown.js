@@ -9,8 +9,8 @@ class Dropdown extends Fragment {
             this.dom_elem.addEventListener("mouseleave", this.close.bind(this));
         });
 
-        this.dom_elem.style.top = `${this.source.offsetTop + this.source.offsetHeight + 5}px`;
-        this.dom_elem.style.left = `${this.source.offsetLeft - (this.source.offsetWidth/2)}px`;
+        this.dom_elem.style.top = `calc(${((this.source.offsetTop + this.source.offsetHeight) / document.body.offsetHeight)*100}% + 5px)`;
+        this.dom_elem.style.left = `${((this.source.offsetLeft - (this.source.offsetWidth/2)) / document.body.offsetWidth) * 100}%`;
     }
 
     async get_html(){
