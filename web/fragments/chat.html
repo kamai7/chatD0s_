@@ -6,7 +6,7 @@ Contenu de la fenêtre de chat
 <div class="chat" id="{{id}}">
     <div class="chat-body">
         <!-- Besoin du container sinon ça fait bugger la taille du chat -->
-        <div class="chat-body-container">{{messages}}</div>
+        <div class="chat-body-container" id="{{id}}-content"></div>
     </div>
     <div class="chat-footer">
         <input type="text" class="chat-input" placeholder="Ecrivez un message..." autocomplete="off">
