@@ -13,11 +13,6 @@ class Dropdown extends Fragment {
         this.dom_elem.style.left = `${((this.source.offsetLeft - (this.source.offsetWidth/2)) / document.body.offsetWidth) * 100}%`;
     }
 
-    async get_html(){
-        var fragment = await this.get_fragment();
-        return fragment;
-    }
-
     close(){
         this.dom_elem.remove();
     }

@@ -60,7 +60,6 @@
     100% { box-shadow: 0 0 17px 0px var(--glow); }
 }
 .login-submit:hover {
-    background-color: var(--dark-secondary);
-    border-color: gray;
+    filter: brightness(1.3);
     animation: login-submit-glow 1.5s infinite;
 }

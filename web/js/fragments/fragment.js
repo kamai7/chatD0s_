@@ -25,7 +25,11 @@ class Fragment {
             await elem.insert(this.id + "-content");
         }
     }
-    
+
+    async get_html() {
+        var fragment = await this.get_fragment();
+        return fragment;
+    }
 
     /**
      * Récupère le code HTML du fragment (selon l'attribut 'frag_name').
@@ -45,7 +49,7 @@ class Fragment {
     /**
      * Récupère le code HTML du fragment et le remplace dans le DOM.
      */
-    async update() {
+    async reload() {
         var fragment = this.get_html().getElementById(this.id).content();
         this.dom_elem.innerHTML = fragment;
     }

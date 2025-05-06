@@ -24,5 +24,8 @@ function f() {
 }
 
 async function open_log_in() {
-    var log_in_page = new Window("Log In page");
+    var login_page = new Fragment("login");
+    var login_window = new Window("Log In page",login_page);
+
+    await login_window.insert("workspace-content");
 }
