@@ -1,21 +1,12 @@
 /*
  * Styles pour le fragment 'window'
  */
-.window-content{
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 5px;
-}
-
 .window.window-visible {
     /* Position absolue mais relative au parent car le
     parent (.workspace-content) est positionné en relatif */
     position: absolute;
-    width: 400px;
-    height: 300px;
+    min-width: min-content;
+    min-height: min-content;
     
     display: flex;
     flex-direction: column;
@@ -26,9 +17,23 @@
     &.window-maximized {
         left: 0 !important;
         top: 0 !important;
-        width: 100%;
-        height: 100%;
+        width: 100% !important;
+        height: 100% !important;
+
+        border-radius: 0;
+
+        .window-resizer { display: none; }
     }
+}
+
+.window-content{
+    height: 100%;
+    min-height: min-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
 }
 
 .window-header {
@@ -63,4 +68,30 @@
 .window-close:hover{
     transition: 0.2s;
     background-color: rgba(255, 0, 0, 0.5);
+}
+
+.window-resizer {
+    position: absolute;
+    z-index: 1;
+    width: 5px;
+    height: 5px;
+    user-select: none;
+
+    &.corner {
+        z-index: 2;
+        &.tl { cursor: nw-resize; top: 0; left: 0; }
+        &.tr { cursor: ne-resize; top: 0; right: 0; }
+        &.bl { cursor: sw-resize; bottom: 0; left: 0; }
+        &.br { cursor: se-resize; bottom: 0; right: 0; }
+    }
+    &.t, &.b {
+        width: 100%;
+    }
+    &.l, &.r {
+        height: 100%;
+    }
+    &.t { cursor: n-resize; top: 0; }
+    &.b { cursor: s-resize; bottom: 0; }
+    &.l { cursor: w-resize; left: 0; }
+    &.r { cursor: e-resize; right: 0; }
 }

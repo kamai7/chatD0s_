@@ -7,15 +7,15 @@ class Window extends Fragment {
      * @param {number} width - La largeur de la fenêtre (0 par défaut).
      * @param {number} height - La hauteur de la fenêtre (0 par défaut).
      */
-    constructor(title, content, maximized=false, width=0, height=0) {
+    constructor(title, content, maximized=false, width=400, height=300) {
         super("window",[content]);
         this.title = title;
 
         this.maximized = maximized;
         this.minimized = false;
 
-        this.pos_left = 0;
-        this.pos_top = 0;
+        this.left = 0;
+        this.top = 0;
         this.width = width;
         this.height = height;
     }
@@ -37,6 +37,11 @@ class Window extends Fragment {
             maximize_button.addEventListener("click", this.toggle_maximized.bind(this));
             
             this.dom_elem.addEventListener("click", this.focus.bind(this));
+
+            const resizers = this.dom_elem.getElementsByClassName("window-resizer");
+            for (let i = 0; i < resizers.length; i++) {
+                resizers[i].addEventListener("mousedown", this.resize.bind(this));
+            }
         }
 
         const close_button = this.dom_elem.getElementsByClassName("window-close")[0];
@@ -44,9 +49,22 @@ class Window extends Fragment {
     }
 
     async get_html() {
-        var html = await this.get_fragment();
+        let html = await this.get_fragment();
         html = html.replaceAll("{{title}}", this.title);
         return html;
+    }
+
+    async insert(parent_id, placement = "beforeend") {
+        const html = await this.get_html();
+
+        document.getElementById(parent_id).insertAdjacentHTML(placement, html);
+        this.dom_elem = document.getElementById(this.id);
+        this.init();
+        if (!this.minimized) {
+            for(let elem of this.elems_list){
+                await elem.insert(this.id + "-content");
+            }
+        }
     }
 
     /**
@@ -57,21 +75,8 @@ class Window extends Fragment {
     set_size(w, h) {
         this.width = w;
         this.height = h;
-        this.dom_elem.style.w = `${w}px`;
-        this.dom_elem.style.h = `${h}px`;
-    }
-
-    async insert(parent_id, placement = "beforeend") {
-        var elem = await this.get_html();
-
-        document.getElementById(parent_id).insertAdjacentHTML(placement, elem);
-        this.dom_elem = document.getElementById(this.id);
-        this.init();
-        if (!this.minimized) {
-            for(var elem of this.elems_list){
-                await elem.insert(this.id + "-content");
-            }
-        }
+        this.dom_elem.style.width = `${w}px`;
+        this.dom_elem.style.height = `${h}px`;
     }
 
     /**
@@ -80,8 +85,8 @@ class Window extends Fragment {
      * @param {number} y - La position verticale de la fenêtre.
      */
     set_pos(x, y) {
-        this.pos_left = x;
-        this.pos_top = y;
+        this.left = x;
+        this.top = y;
         this.dom_elem.style.left = `${x}px`;
         this.dom_elem.style.top = `${y}px`;
     }
@@ -93,20 +98,10 @@ class Window extends Fragment {
     drag(event) {
         this.focus();
 
-        const workspace = document.getElementById("workspace-content");
-
-        const mouseOffX = event.clientX - this.pos_left;
-        const mouseOffY = event.clientY - this.pos_top;
-        
-        // Récupère les positions min et max, en fonction de la taille du workspace
-        const limitRight = workspace.offsetWidth - this.dom_elem.offsetWidth;
-        const limitBottom = workspace.offsetHeight - this.dom_elem.offsetHeight;
-
         // Listener pour le mouvement de la souris
         const moveListener = ((e) => {
-            const newLeft = this.pos_left + e.movementX;
-            const newTop = this.pos_top + e.movementY;
-
+            const newLeft = this.left + e.movementX;
+            const newTop = this.top + e.movementY;
             this.set_maximized(newTop <= 0);
             this.set_pos(newLeft, newTop);
         }).bind(this);
@@ -115,8 +110,7 @@ class Window extends Fragment {
         const stopListener = ((e) => {
             document.removeEventListener("mousemove", moveListener);
             document.removeEventListener("mouseup", stopListener);
-
-            this.set_pos(this.pos_left, Math.max(0, this.pos_top));
+            this.set_pos(this.left, Math.max(0, this.top));
         }).bind(this);
 
         document.addEventListener("mousemove", moveListener);
@@ -167,7 +161,7 @@ class Window extends Fragment {
         this.dom_elem.remove();
         await this.insert("workspace-content", "afterbegin");
 
-        this.set_pos(this.pos_left, this.pos_top);
+        this.set_pos(this.left, this.top);
     }
 
     /**
@@ -187,5 +181,86 @@ class Window extends Fragment {
         if (!this.minimized && this.dom_elem.parentNode.querySelector(".window:last-child") !== this.dom_elem) {
             this.dom_elem.parentNode.appendChild(this.dom_elem);
         }
+    }
+
+    /**
+     * Listener qui redimensionne la fenêtre en fonction de la position de la souris.
+     * @param {MouseEvent} event - L'événement de la souris.
+     */
+    resize(event) {
+        const currentResizer = event.target;
+
+        const prevX = event.clientX;
+        const prevY = event.clientY;
+        const prevWidth = this.width;
+        const prevHeight = this.height;
+        const prevLeft = this.left;
+        const prevTop = this.top;
+
+        const workspace = document.getElementById("workspace-content");
+        const xMin = workspace.offsetLeft;
+        const yMin = workspace.offsetTop;
+        const xMax = xMin + workspace.offsetWidth;
+        const yMax = yMin + workspace.offsetHeight;
+
+        const moveListener = ((e) => {
+            let newWidth = prevWidth;
+            let newHeight = prevHeight;
+            let newLeft = prevLeft;
+            let newTop = prevTop;
+
+            const movX = Math.min(xMax, Math.max(xMin, e.clientX)) - prevX;
+            const movY = Math.min(yMax, Math.max(yMin, e.clientY)) - prevY;
+            
+            if (currentResizer.classList.contains("br")) {
+                newWidth += movX;
+                newHeight += movY;
+            }
+            else if (currentResizer.classList.contains("bl")) {
+                newWidth -= movX;
+                newHeight += movY;
+                newLeft += movX;
+            }
+            else if (currentResizer.classList.contains("tr")) {
+                newWidth += movX;
+                newHeight -= movY;
+                newTop += movY;
+            }
+            else if (currentResizer.classList.contains("tl")) {
+                newWidth -= movX;
+                newHeight -= movY;
+                newLeft += movX;
+                newTop += movY;
+            }
+            else if (currentResizer.classList.contains("t")) {
+                newHeight -= movY;
+                newTop += movY;
+            }
+            else if (currentResizer.classList.contains("b")) {
+                newHeight += movY;
+            }
+            else if (currentResizer.classList.contains("l")) {
+                newWidth -= movX;
+                newLeft += movX;
+            }
+            else if (currentResizer.classList.contains("r")) {
+                newWidth += movX;
+            }
+
+            this.set_size(newWidth, newHeight);
+            this.set_pos(newLeft, newTop);
+        }).bind(this);
+
+        const stopListener = ((e) => {
+            document.removeEventListener("mousemove", moveListener);
+            document.removeEventListener("mouseup", stopListener);
+            const style = window.getComputedStyle(this.dom_elem, null);
+            // Définir la taille de la fenêtre en fonction de la taille du contenu
+            // Au cas où la fenêtre est trop petite
+            this.set_size(this.dom_elem.offsetWidth, this.dom_elem.offsetHeight);
+        }).bind(this);
+        
+        document.addEventListener("mousemove", moveListener);
+        document.addEventListener("mouseup", stopListener);
     }
 }
