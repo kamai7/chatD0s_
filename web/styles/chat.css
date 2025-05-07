@@ -3,9 +3,10 @@
  */
 
 .chat{
+    color: var(--secondary2);
     display: flex;
     flex-direction: column;
-    background-color: var(--dark-secondary);
+    background-color: var(--dark2);
     border-radius: 6px;
     height: 100%;
     width: 100%;
@@ -14,12 +15,12 @@
 .chat-body {
     flex-grow: 1;
     margin-bottom: 10px;
-    color: var(--primary);
     overflow-y: auto;
     display: flex;
     flex-direction: column;
     gap: 5px;
     margin: 10px;
+    color: var(--primary);
 }
 
 .chat-body-container {
@@ -30,9 +31,9 @@
 .chat-footer {
     display: flex;
     justify-content: space-between;
-    background-color: var(--dark-secondary);
-    border: 2px solid var(--border-glow);
-    filter: drop-shadow(0 0 5px var(--glow));
+    background-color: var(--dark1-secondary);
+    border: 2px solid var(--border2);
+    filter: drop-shadow(0 0 3px var(--glow-purple));
     border-radius: 12px;
 }
 
@@ -40,7 +41,6 @@
     all: unset;
     margin: 0 5px;
     flex-grow: 1;
-    color: var(--text-primary);
     align-self: center;
     display: block;
     width: 100%;
@@ -58,7 +58,7 @@
 
 .chat-input:empty::before {
     content: "Ecrivez votre message ici...";
-    color: var(--text-secondary);
+    color : var(--secondary1);
     pointer-events: none;
     display: block;
     font-size: 0.8em;
@@ -66,7 +66,7 @@
 
 .chat-send {
     margin: 5px;
-    background-color: var(--border-glow);
+    background-color: var(--border2);
     border-radius: 8px;
     padding: 3px 8px;
     cursor: pointer;

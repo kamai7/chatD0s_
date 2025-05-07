@@ -19,14 +19,14 @@
 }
 
 .button-bordered{
-    border: 3px solid var(--icons);
+    border: 3px solid var(--border3);
     border-radius: 10px;
 }
 
 .button-hover:hover{
     transform: scale(1.05);
     filter: brightness(1.2);
-    filter: drop-shadow(0 0 10px rgba(255, 208, 0, 0.2));
+    filter: drop-shadow(0 0 10px var(--glow-gray));
     transition: 0.2s;
 }
 

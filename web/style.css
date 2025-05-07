@@ -8,24 +8,32 @@
 @import url('./styles/window_minimized.css');
 @import url('./styles/window.css');
 @import url('./styles/drop_down_menu.css');
+@import url('./styles/server_container.css');
 
 
 /*instaces*/
 :root{
-    --border-glow : rgb(59, 40, 168);
-    --border : rgb(82, 65, 175);
-    --primary: rgb(41, 41, 41);
-    --secondary: rgb(57, 57, 57);
-    --text-primary: rgb(186, 186, 186);
-    --text-secondary: rgb(110, 110, 110);
-    --dark : rgb(8, 8, 8);
-    --dark-secondary: rgb(18, 18, 18);
-    --hue : 0deg;
-    
+    /*glows and border*/
+    --border1 : rgb(44, 19, 184);
+    --border2 : rgb(77, 38, 184);
+    --border3 : #444444;
     --border-light: rgb(108, 69, 206);
-    --glow: rgba(108, 69, 206, 0.5);
+    --glow-purple: rgba(108, 69, 206, 0.5);
+    --glow-gray: rgb(61, 61, 61);
+    
+    /*blocs and divs*/
+    --dark1 : rgb(6, 6, 6);
+    --dark2 : rgb(16, 16, 16);
+    --dark3 : rgb(26, 26, 26);
+    --dark4 : rgb(68, 68, 68);
+    
+    
 
-    --icons: rgb(61, 61, 61);
+    /*texts*/
+    --primary: rgb(196, 196, 196);
+    --secondary1: rgb(134, 134, 134);
+    --secondary2: rgb(240, 240, 240);
+    --title : #ff007b;
 }
 @font-face {
 	font-family: 'main';
@@ -37,11 +45,11 @@
     height: 6px;
 }
 ::-webkit-scrollbar-thumb {
-    background-color: var(--glow);
+    background-color: var(--glow-shadow);
     border-radius: 10px;
 }
 ::-webkit-scrollbar-track {
-    background-color: var(--dark);
+    background-color: var(--dark1);
     border-radius: 10px;
 }
 
@@ -71,7 +79,7 @@ header{
     min-height: 100px;
     min-width: 600px;
     background-color: black;
-    border-bottom: var(--border-glow) solid 4px;
+    border-bottom: var(--border1) solid 4px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -145,13 +153,13 @@ main{
     background: rgb(255,0,206);
     background: linear-gradient(190deg, rgba(255,0,206,1) 0%, rgba(29,0,255,1) 100%);
     filter: hue-rotate(var(--hue));
-    filter: drop-shadow(0 0 15px var(--border-glow));
+    filter: drop-shadow(0 0 15px var(--glow));
     height: 44px;
     width: 40%;
 }
 
 #main-search-bar-border{
-    background-color: rgb(68, 68, 68);
+    background-color: var(--dark4);
     border-radius: 10px;
     height: calc(100% - 4px);
     width: calc(100% - 4px);

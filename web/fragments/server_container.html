@@ -1,0 +1,19 @@
+<!--
+Elément de la liste des salons
+    - pp_link : lien de l'image
+    - name : nom du salon
+    - status : type de status (classe html, soit "status-online" soit "status-offline")
+    - status_text : texte du status
+-->
+
+<div class="server-container" id="{{id}}" style="background-image: url({{bg_image}});">
+    <div class="pp-container">
+        <img src="{{pp_link}}">
+    </div>
+    <div class="content-container">
+        <span class="server-name" style="background: -webkit-linear-gradient({{server_name_color}});">{{name}}</span>
+        <div class="social-status">
+            {{status}}
+        </div>
+    </div>
+</div>

@@ -1,3 +1,14 @@
+// init
+var friends = [];
+for (var friend of FRIENDS) {
+    friends.push(new SocialContainer(friend["pp_link"], friend["name"], friend["status"], friend["status_text"]));
+}
+
+var servers = [];
+for (var server of SERVERS) {
+    servers.push(new ServerContainer(server["server_name"], server["server_name_color"], server["server_bg_image"], server["server_pp"], server["server_statut"]));
+}
+
 
 async function open_user() {
     var source = button_user;

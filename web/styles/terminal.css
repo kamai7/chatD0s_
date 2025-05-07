@@ -7,7 +7,7 @@
     flex-direction: column;
     margin: 5px;
     padding: 10px;
-    background-color: var(--dark-secondary);
+    background-color: var(--dark1-secondary);
     border-radius: 6px;
     height: calc(100% - 51px);
 }
@@ -40,9 +40,9 @@
 .terminal-footer {
     display: flex;
     padding: 5px;
-    background-color: var(--dark-secondary);
-    border: 2px solid var(--border-glow);
-    filter: drop-shadow(0 0 5px var(--glow));
+    background-color: var(--dark1-secondary);
+    border: 2px solid var(--glow);
+    filter: drop-shadow(0 0 5px var(--glow-shadow));
     border-radius: 12px;
 }
 
@@ -55,7 +55,7 @@
 
 .terminal-send {
     margin: 0 5px;
-    background-color: var(--border-glow);
+    background-color: var(--glow);
     border-radius: 12px;
     padding: 3px 7px;
     cursor: pointer;

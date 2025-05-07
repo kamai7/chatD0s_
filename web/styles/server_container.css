@@ -1,0 +1,70 @@
+/*
+ * Styles pour le fragment 'social_container'
+ */
+
+ .server-container{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    border-radius: 10px;
+    cursor: pointer;
+    align-items: center;
+    max-height: 100px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: var(--secondary1);
+    background-size: 100% 100%;
+    background-position: center;
+}
+
+.pp-container{
+    display: flex;
+    margin-left: 5px;
+    align-items: center;
+    width: 28%;
+    max-width: 60px;
+    min-width: 30px;
+}
+
+.pp-container img{
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 30%;
+}
+
+.social-status{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    margin-top: 5px;
+}
+
+.status-icon{
+    aspect-ratio: 1/1;
+    width: 14px;
+    border-radius: 50%;
+    
+    &.status-online{
+        background-color: rgb(100, 255, 100);
+    }
+    &.status-offline{
+        background-color: rgb(255, 100, 100);
+    }
+}
+
+.content-container{
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    width: 100%;
+    height: 100%;
+    overflow-wrap: anywhere;
+}
+
+.server-name{
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-top: 5px;
+    color: var(--secondary2);
+}	

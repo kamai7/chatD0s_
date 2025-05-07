@@ -17,7 +17,7 @@
 }
 
 .chat-message-username {
-    color: #ff007b;
+    color: var(--title);
     font-weight: 500;
     font-size: 0.9em;
 }
@@ -29,12 +29,10 @@
 .chat-message-content {
     font-weight: 100;
     width: 100%;
-    color: var(--text-primary);
     overflow-wrap: break-word;
     word-break: break-word;
     hyphens: auto;
     font-size: 0.8em;
-    color: var(--text-primary);
 }
 
 .command-result{

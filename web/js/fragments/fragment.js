@@ -9,6 +9,7 @@ class Fragment {
         this.dom_elem;
         this.frag_name = frag_name;
         this.elems_list = elems_list;
+        this.insered_position;
     }
 
     /**
@@ -18,6 +19,7 @@ class Fragment {
      */
     async insert(parent_id, placement = "beforeend") {
         var elem = await this.get_html();
+        this.insered_position = placement;
 
         document.getElementById(parent_id).insertAdjacentHTML(placement, elem);
         this.dom_elem = document.getElementById(this.id);
@@ -56,8 +58,10 @@ class Fragment {
      * pour actualiser le fragment
      */
     async reload() {
-        var fragment = this.get_html().getElementById(this.id).content();
-        this.dom_elem.innerHTML = fragment;
+        var parent = this.dom_elem.parentElement.id;
+        this.dom_elem.remove();
+        this.insert(parent, this.insered_position);
+        console.log(this.insered_position);
     }
 
     /**
