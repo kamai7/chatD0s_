@@ -9,12 +9,13 @@
     border-radius: 10px;
     cursor: pointer;
     align-items: center;
-    max-height: 100px;
+    height: 60px;
     padding-top: 10px;
     padding-bottom: 10px;
     color: var(--secondary1);
-    background-size: 100% 100%;
+    background-size: 100%;
     background-position: center;
+    z-index: 1;
 }
 
 .pp-container{
@@ -30,41 +31,49 @@
     width: 100%;
     aspect-ratio: 1/1;
     border-radius: 30%;
+    z-index: 2;
 }
 
-.social-status{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    width: 100%;
+.server-status{
+    color: var(--secondary3);
     margin-top: 5px;
 }
 
-.status-icon{
-    aspect-ratio: 1/1;
-    width: 14px;
-    border-radius: 50%;
-    
-    &.status-online{
-        background-color: rgb(100, 255, 100);
-    }
-    &.status-offline{
-        background-color: rgb(255, 100, 100);
-    }
-}
-
-.content-container{
+.server-content-container{
     display: flex;
     flex-direction: column;
     margin: 5px;
     width: 100%;
-    height: 100%;
     overflow-wrap: anywhere;
+    z-index: 2;
 }
 
 .server-name{
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
     margin-top: 5px;
-    color: var(--secondary2);
-}	
+    overflow-wrap: anywhere;
+    text-overflow: ellipsis;
+}
+
+@keyframes server-name-animation {
+    0% {
+        scale : 1;
+        filter: brightness(1);
+    }
+    20% {
+        scale : 1.025;
+        filter: brightness(1.2) hue-rotate(10deg);
+    }
+    100% {
+        scale: 1.05;
+        filter: brightness(1.2) hue-rotate(12deg);
+    }
+}
+
+.server-name:hover{
+    animation-name: server-name-animation;
+    animation-duration: 0.4s;
+    scale: 1.05;
+    filter: brightness(1.1) hue-rotate(12deg);
+}

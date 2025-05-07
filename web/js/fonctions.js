@@ -10,6 +10,7 @@ async function load_nav() {
 
     nav = new Nav(friends, buttons);
     await nav.insert("main","afterbegin");
+    return nav;
 }
 
 async function blink_app_name() {
@@ -35,11 +36,11 @@ async function open_log_in() {
 }
 
 async function set_friend_on_nav() {
-    nav.elems_list = friends;
+    nav_page.elems_list = friends;
     await nav.reload();
 }
 
 async function set_server_on_nav() {
-    nav.elems_list = servers;
+    nav_page.elems_list = servers;
     await nav.reload();
 }

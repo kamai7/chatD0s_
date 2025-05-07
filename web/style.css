@@ -33,6 +33,7 @@
     --primary: rgb(196, 196, 196);
     --secondary1: rgb(134, 134, 134);
     --secondary2: rgb(240, 240, 240);
+    --secondary3: black;
     --title : #ff007b;
 }
 @font-face {

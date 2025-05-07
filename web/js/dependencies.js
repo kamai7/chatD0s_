@@ -5,7 +5,7 @@ var button_settings;
 const TERMINAL_ICON = "img/ui/terminal.png";
 const USER_ICON = "img/illustrations/not-log-user.png";
 const SETTINGS_ICON = "img/ui/settings.png";
-const SERVER_ICON = "img/illustrations/default-server.gif";
+const SERVER_ICON = "img/illustrations/satou_cute.png";
 const SERVER_PP = "img/illustrations/pp-server.png";
 
 const FRIENDS = [
