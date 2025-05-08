@@ -2,58 +2,77 @@
  * Styles pour le fragment 'social_container'
  */
 
- .server-container{
-    width: 100%;
+ .server-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px; /* Assure-toi que le radius est bien là */
+    isolation: isolate;
+    z-index: 1;
     display: flex;
-    flex-direction: row;
-    border-radius: 10px;
-    cursor: pointer;
     align-items: center;
-    height: 60px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    color: var(--secondary1);
-    background-size: 100%;
+    justify-content: space-between;
+    height: 80px;
+}
+
+/* Pseudo-élément pour l’arrière-plan en niveaux de gris */
+.server-container::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: inherit;
+    background-size: cover;
     background-position: center;
+    filter: brightness(0.35);
+    border-radius: 10px;
+    z-index: 0;
+}
+
+/* Tous les éléments enfants doivent être au-dessus */
+.server-container > * {
+    position: relative;
     z-index: 1;
 }
 
-.pp-container{
+.server-pp-container{
     display: flex;
     margin-left: 5px;
     align-items: center;
-    width: 28%;
-    max-width: 60px;
-    min-width: 30px;
+    width: 60px;
+    height: 60px;
 }
 
-.pp-container img{
-    width: 100%;
+.server-pp-container img{
     aspect-ratio: 1/1;
     border-radius: 30%;
-    z-index: 2;
+    width: 100%;
 }
 
 .server-status{
     color: var(--secondary3);
     margin-top: 5px;
+    font-size: 0.8em;
+    font-weight: bold;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .server-content-container{
     display: flex;
     flex-direction: column;
-    margin: 5px;
-    width: 100%;
-    overflow-wrap: anywhere;
+    margin: 5px 10px 5px 5px;
+    width: calc(100% - 80px);
     z-index: 2;
+    height: min-content;
 }
 
 .server-name{
     background-clip: text;
     color: transparent;
     margin-top: 5px;
-    overflow-wrap: anywhere;
+    white-space: nowrap;          /* ❌ pas de retour à la ligne */
+    overflow: hidden;
     text-overflow: ellipsis;
+    font-weight: bolder;
 }
 
 @keyframes server-name-animation {

@@ -24,7 +24,10 @@ async function open_settings() {
 }
 
 async function open_terminal() {
-    console.log("open_terminal");
+    let terminal = new Terminal([]);
+    let window_terminal = new Window("Terminal", terminal);
+
+    window_terminal.insert("workspace-content");
 }
 
 // add nav bar after document load

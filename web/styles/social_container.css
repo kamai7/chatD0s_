@@ -20,9 +20,8 @@
     display: flex;
     margin-left: 5px;
     align-items: center;
-    width: 28%;
-    max-width: 60px;
-    min-width: 30px;
+    width: 60px;
+    height: 60px;
 }
 
 .pp-container img{

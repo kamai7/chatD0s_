@@ -3,24 +3,24 @@
  */
 
 .terminal {
+    color: var(--secondary2);
     display: flex;
     flex-direction: column;
-    margin: 5px;
-    padding: 10px;
-    background-color: var(--dark1-secondary);
+    background-color: var(--dark2);
     border-radius: 6px;
-    height: calc(100% - 51px);
+    height: 100%;
+    width: 100%;
 }
 
 .terminal-body {
     flex-grow: 1;
     margin-bottom: 10px;
-    padding: 5px;
-    color: var(--primary);
     overflow-y: auto;
     display: flex;
     flex-direction: column;
     gap: 5px;
+    margin: 10px;
+    color: var(--primary);
 }
 
 .terminal-body-container {
@@ -38,25 +38,58 @@
 }
 
 .terminal-footer {
+    background: var(--dark1) !important;
     display: flex;
-    padding: 5px;
+    justify-content: space-between;
     background-color: var(--dark1-secondary);
-    border: 2px solid var(--glow);
-    filter: drop-shadow(0 0 5px var(--glow-shadow));
-    border-radius: 12px;
+    border: 2px solid rgba(255, 255, 255, 0.144);
+    filter: drop-shadow(0 0 3px var(--glow-purple));
+    border-radius: 10px;
+    width: 100%;
 }
 
 .terminal-input {
     all: unset;
-    flex-grow: 1;
     margin: 0 5px;
-    color: var(--text-primary);
+    flex-grow: 1;
+    align-self: center;
+    display: block;
+    max-height: 100px;
+    line-height: 20px;
+    width: 100%;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+    resize: none;
+
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    word-break: break-word;
 }
 
-.terminal-send {
-    margin: 0 5px;
-    background-color: var(--glow);
-    border-radius: 12px;
-    padding: 3px 7px;
+.terminal-input:empty::before {
+    content: "_";
+    color : var(--secondary1);
+    pointer-events: none;
+    display: block;
+    font-size: 0.8em;
+    width: 100%;
+  }
+
+.terminal-prefix {
+    margin: 5px;
+    color: var(--title);
+    width: fit-content;
+    border-radius: 8px;
+    padding: 3px 8px;
     cursor: pointer;
+    align-self: flex-end;
+    white-space: nowrap;
+}
+
+.terminal-prefix::after{
+    content: "";
+    height: 100%;
+    width: 2px;
+    background-color: var(--glow-gray);
 }
