@@ -35,8 +35,6 @@ class ServerContainer extends Fragment {
             messages.push(new Message(USER_ICON, this.name, "judfdbsbfdbdffbdbfbdsbf"));
         }
         var chat_page = new Chat(messages);
-
-        console.log(this.name_color);
         var window = new Window(this.name, chat_page);
         window.title_color = this.name_color
 
