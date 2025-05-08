@@ -190,6 +190,9 @@ main{
     gap: 4px;
 }
 
+#workspace-windows > *{
+    flex: 0 auto;
+}
 #workspace-content{
     display: flex;
     flex-direction: row;

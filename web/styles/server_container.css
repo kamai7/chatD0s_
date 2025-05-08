@@ -12,6 +12,7 @@
     align-items: center;
     justify-content: space-between;
     height: 80px;
+    overflow: hidden;
 }
 
 /* Pseudo-élément pour l’arrière-plan en niveaux de gris */
@@ -67,6 +68,7 @@
 
 .server-name{
     background-clip: text;
+    width: fit-content;
     color: transparent;
     margin-top: 5px;
     white-space: nowrap;          /* ❌ pas de retour à la ligne */

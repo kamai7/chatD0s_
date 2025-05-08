@@ -26,6 +26,11 @@
     }
 }
 
+.window-header-movable{
+    width: 100%;
+    cursor: move
+}
+
 .window-content{
     height: 100%;
     min-height: min-content;
@@ -49,6 +54,9 @@
     width: 100%;
     padding: 0 5px;
     cursor: move;
+    width: fit-content;
+    background-clip: text;
+    color: transparent;
 }
 
 .window-buttons {

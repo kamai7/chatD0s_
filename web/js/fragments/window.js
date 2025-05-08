@@ -7,7 +7,7 @@ class Window extends Fragment {
      * @param {number} width - La largeur de la fenêtre (0 par défaut).
      * @param {number} height - La hauteur de la fenêtre (0 par défaut).
      */
-    constructor(title, content, maximized=false, width=400, height=300) {
+    constructor(title, content, maximized=false, width=400, height=300, title_color=["white"]) {
         super("window",[content]);
         this.title = title;
 
@@ -18,16 +18,17 @@ class Window extends Fragment {
         this.top = 0;
         this.width = width;
         this.height = height;
+        this.title_color = title_color;
     }
 
     async init() {
         this.set_size(this.width, this.height);
 
         if (this.minimized) {
-            const retrieve_button = this.dom_elem.getElementsByClassName("window-title")[0];
+            const retrieve_button = this.dom_elem.getElementsByClassName("window-minimized-title")[0];
             retrieve_button.addEventListener("click", this.retrieve.bind(this));
         } else {
-            const title = this.dom_elem.getElementsByClassName("window-title")[0];
+            const title = this.dom_elem.getElementsByClassName("window-header-movable")[0];
             title.addEventListener("mousedown", this.drag.bind(this));
 
             const minimize_button = this.dom_elem.getElementsByClassName("window-minimize")[0];
@@ -50,7 +51,12 @@ class Window extends Fragment {
 
     async get_html() {
         let html = await this.get_fragment();
+        let colors_text = "";
+        for (let color of this.title_color) {
+            colors_text +=  ", " + color;
+        }
         html = html.replaceAll("{{title}}", this.title);
+        html = html.replaceAll("{{window_name_color}}", colors_text);
         return html;
     }
 

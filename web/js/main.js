@@ -6,7 +6,7 @@ for (var friend of FRIENDS) {
 
 var servers = [];
 for (var server of SERVERS) {
-    servers.push(new ServerContainer(server["server_name"], server["server_name_color"], server["server_bg_image"], server["server_pp"], server["server_statut"]));
+    servers.push(new ServerContainer(server["server_name"], server["server_name_color"], server["server_bg_image"], server["server_pp"], server["server_statut"], server["server_statut_color"]));
 }
 
 
