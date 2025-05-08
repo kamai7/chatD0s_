@@ -15,8 +15,8 @@ async function open_user() {
 
     var list_button = [new TextButton("Log in", open_log_in), new TextButton("Log out", f, color = "red")];
     
-    var user_menu = new Dropdown(list_button, source);
-    await user_menu.insert("workspace");
+    var user_menu = new Dropdown(list_button);
+    insert_dropdown_from_source(user_menu, source);
 }
 
 async function open_settings() {
@@ -34,7 +34,6 @@ async function open_terminal() {
 addEventListener("DOMContentLoaded", async (event) => {
 
     blink_app_name();
-
     nav_page = await load_nav();
     
 

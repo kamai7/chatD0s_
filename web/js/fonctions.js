@@ -44,3 +44,9 @@ async function set_server_on_nav() {
     nav_page.elems_list = servers;
     await nav.reload();
 }
+
+async function insert_dropdown_from_source(dropdown, source){
+    let pos_x = source.dom_elem.offsetLeft - (source.dom_elem.offsetWidth/2);
+    let pos_y = source.dom_elem.offsetTop + source.dom_elem.offsetHeight + 5;
+    await dropdown.insert("workspace", pos_x, pos_y);
+}

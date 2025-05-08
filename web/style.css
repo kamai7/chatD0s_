@@ -46,7 +46,7 @@
     height: 6px;
 }
 ::-webkit-scrollbar-thumb {
-    background-color: var(--glow-shadow);
+    background-color: var(--glow-purple);
     border-radius: 10px;
 }
 ::-webkit-scrollbar-track {
